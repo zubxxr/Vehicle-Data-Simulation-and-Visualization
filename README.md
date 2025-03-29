@@ -83,7 +83,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
         Lines 4 and 5 include new imports.
         Line 8 requires an update to the main function.
         Line 11 creates a connection to the Kuksa Databroker.
-        Lines 24 to 29 involve sending the generated OBD data to the Databroker.
+        Lines 23 to 28 involve sending the generated OBD data to the Databroker.
         ```
 3. Complete the Code
 

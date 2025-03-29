@@ -285,10 +285,28 @@ def put_feature_value(thingID, feature, value):
     - For each function call in step 4, the response variable will store the result of the put_feature_value function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
       
 6. Copy The Following Code
-    - Copy this code and paste it after the main function but above the ‘asyncio.run(main())’ line.
+    - Copy this code and paste it after the main function but above the ‘asyncio.run(main())’ line. It will be outside the main function.
+		```python
+		# STEP 1
+		# with open("_______", "r") as dittoFile:
+		# 	data = json.load(dittoFile)
+		
+		# response = put_policy("org.ovin:my-policy", data)
+		# print(response)
+		
+		# STEP 2
+		# with open("_______", "r") as dittoFile:
+		# 	data = json.load(dittoFile)
+		
+		# response = put_thing("org.ovin:my-vehicle", data)
+		# print(response)
+		```
 
 7. Uncomment Step 1 Code
     - Uncomment the code under Step 1 and also comment the final line: ‘asyncio.run(main())’. It will look like this:
+      
+      ![image](https://github.com/user-attachments/assets/7a1fb92d-c27e-4f6e-836d-396d13378e2d)
+
 
 8. Open Policy File
     - Open the ‘policy.json’ file already created inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
@@ -301,6 +319,9 @@ def put_feature_value(thingID, feature, value):
 
 11. Uncomment Step 2 Code
     - Next, go back to the file, comment the Step 1 code, and uncomment the Step 2 code. It will look like this:
+
+      ![image](https://github.com/user-attachments/assets/3947c3a6-0db9-48c4-ac23-3473a3f4dea0)
+
 
 12. Open Thing File
     - Open the ‘VSS_Ditto.json’ file already created inside the current folder. This file helps link our Thing with the created policy and also defines the features of our Thing.

@@ -265,17 +265,17 @@ def put_feature_value(thingID, feature, value):
 ### Experiment 7: Sending OBD Data to Eclipse Ditto
 
 1. Copy File
-    - Create a copy of the retrieve_obd_data_from_kuksa.py file in the ‘kuksa-ditto’ folder and rename it to ‘send_recieved_obd_data_to_ditto.py’.
+    - Create a copy of your completed `retrieve_obd_data_from_kuksa.py` file, rename it to `send_recieved_obd_data_to_ditto.py` and place it inside the `kuksa-ditto` folder.
+  
 2. Add These Imports 
-	- Add the following imports under the existing imports.
+    - Add the following imports under the existing imports.
         ```python
         import json
         import requests
         ```
 
-
 3. Add The Following Code
-    - Add the following code at the top of the file under the imports. This code will be above the main function. You will find them at the start of this module under each of the following sections:
+    - The code for each bullet point is provided at the start of this module. Add them to the top of the `send_recieved_obd_data_to_ditto.py` file under the imports but above the main function. 
         ```
         - URLs and Authentication Variables
         - Function 1: get_thing(thingID)

@@ -138,6 +138,114 @@ Module 4 focuses on Eclipse Ditto, explaining its features and how the digital t
 
 Module 5: Integration of Kuksa with Ditto introduces participants to the process of integrating Kuksa with the Ditto IoT platform to send real-time vehicle data, such as OBD information, to Ditto for simulating a digital twin. This module walks through the necessary steps for configuring URLs and authentication variables to interact with the Ditto platform. Participants will also learn about key functions, such as retrieving, updating, and deleting "things" and "policies," as well as managing features within the platform. The module ensures a seamless flow of data from Kuksa to Ditto for real-time monitoring and digital twin creation.
 
+### URLs and Authentication Variables
+The updates start with defining the URLs for the Things and Policies. These URLs are routed to list all the Things and Policies created on your device. Feel free to try entering the thingURL inside your web browser. The login and password will both be “ditto”, which was also defined in the last line as “auth”. However, the policyURL does not work.
+```python
+thingsURL = "http://localhost:8080/api/2/things/"
+policiesURL = "http://localhost:8080/api/2/policies/"
+auth = ("ditto" , "ditto")
+```
+
+### Function 1: get_thing(thingID)
+This function retrieves the details of a specific "thing" using its thingID. If the thing exists, it returns its details in JSON format. If the thing is not found, it returns None.
+```python
+def get_thing(thingID):
+	url = thingsURL + thingID
+	response = requests.get(url, auth=auth)
+	if response.status_code == 404:
+    	   return None
+	else:
+    	   return response.json()
+```
+
+### Function 2: put_thing(thingID, ThingData)
+This function creates a new "thing" with the given thingID and ThingData. If a thing with the same ID already exists, it asks the user if they want to overwrite it. If the user agrees, it updates the existing thing with the new data.
+```python
+def put_thing(thingID, ThingData):
+	thing = get_thing(thingID)
+	url = thingsURL + thingID
+	if (thing == None):
+    	   headers = {"Content-Type": "Application/json"}
+    	   response = requests.put(url, json=ThingData, headers=headers, auth=auth)
+    	   return response
+	else:
+    	   print("There is a thing already created with same thingID")
+    	   print("Do you want to overwrite it(y/n)?")
+    	   answer = input()
+    	   if answer.lower() == 'y':
+        	headers = {"Content-Type": "Application/json"}
+        	response = requests.put(url, json=ThingData, headers=headers, auth=auth)
+        	return response
+```
+
+### Function 3: patch_thing(thingID, ThingData)
+This function partially updates an existing "thing" with the provided ThingData. It only modifies the fields specified in the ThingData, leaving other fields unchanged.
+```python
+def patch_thing(thingID, ThingData):
+	url = thingsURL + thingID
+	headers = {"Content-Type": "Application/merget-patch+json"}
+	response = requests.patch(url, json=ThingData, headers=headers, auth=auth)
+	return response
+```
+
+### Function 4: delete_thing(thingID)
+This function deletes a specific "thing" identified by thingID from the system.
+```python
+def delete_thing(thingID):
+	url = thingsURL + thingID
+	response = requests.delete(url, auth=auth)
+	return response
+```
+
+### Function 5: put_policy(policyID, PolicyData)
+This function creates or updates a policy with the specified policyID and PolicyData. It ensures that the policy is stored with the provided details.
+```python
+def put_policy (policyID, PolicyData):
+	url = policiesURL + policyID
+	headers = {"Content-Type": "Application/json"}
+	response = requests.put(url, json=PolicyData, headers=headers, auth=auth)
+	return response.json()
+```
+
+### Function 6: delete_policy(policyID)
+This function deletes a specific "policy" identified by policyID from the system.
+```python
+def delete_policy(policyID):
+	url = policiesURL + policyID
+	response = requests.delete(url, auth=auth)
+	if response.status_code == 204:
+    	   print(f"Policy '{policyID}' successfully deleted.")
+	else:
+    	   print(f"Failed to delete policy '{policyID}'. Status code: {response.status_code}, Response: {response.text}")
+	return response
+```
+
+### Function 7: get_feature_value(thingID, feature)
+This function retrieves the value of a specific feature of a "thing" identified by thingID. It returns the value as a floating-point number if successful.
+```python
+def get_feature_value(thingID, feature):
+	url = thingsURL + thingID + "/features/" + feature + "/properties/value"
+	response = requests.get(url, auth=auth)
+	if response.status_code == 200:
+    	   value = float(response.json())
+    	   return value
+	else:
+    	   return response
+```
+
+### Function 8: put_feature_value(thingID, feature, value)
+This function sets or updates the value of a specific feature for a "thing" identified by thingID. The new value is provided in the value parameter.
+```python
+def put_feature_value(thingID, feature, value):
+	url = thingsURL + thingID + "/features/" + feature + "/properties"
+	headers = {"Content-Type": "Application/json"}
+	data = {
+    	   "value": value
+	}
+	response = requests.put(url, json=data, headers=headers, auth=auth)
+	return response
+```
+
 ### Experiment 7: Sending OBD Data to Eclipse Ditto
 
 1. Copy File

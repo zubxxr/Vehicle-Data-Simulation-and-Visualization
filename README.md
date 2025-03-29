@@ -358,11 +358,24 @@ def put_feature_value(thingID, feature, value):
       
       ![image](https://github.com/user-attachments/assets/93b3647b-75dc-469f-9184-626e52d74d0c)
 
-15. Uncomment the Main Function Call
-    - Now, comment the Step 2 code, and uncomment the main function call. We are now done with creating the Thing and Policy, and can now go back to the main function, which will send the received data to Ditto.
+15. Open Ditto
+    - Open http://localhost:8080/ in your browser
+    - Open the User Interface
+    - You should see a Thing ID created with the name `org.ovin:my-vehicle`
+    - You can also click on each feature to see the default values written in the VSS_Ditto.json file
+      
+      ![image](https://github.com/user-attachments/assets/431a5b24-f649-465a-9de3-b9f9bf5e450d)
+
+16. Uncomment the Main Function Call
+    - Now, comment the Step 2 code, and uncomment the main function call.
       
 16. Execute the File
-    - Execute the file again. However, make sure that the Kuksa Databroker is running, and the `send_obd_data_to_kuksa.py` file is also running. After executing the file, you should see the received messages appear in the terminal, along with the response number being 204. This means that the messages are being successfully sent to Ditto. If you get any other response number, then there is something wrong.
+    - Make sure your virtual environment is activated.
+    - Run the Kuksa Databroker.
+    - Run the `send_obd_data_to_kuksa.py` file.
+    - Then run the `send_recieved_obd_data_to_ditto.py` file.
+    - After executing the file, you should see the received messages appear in the terminal, along with the response number being 204. This means that the messages are being successfully sent to Ditto. If you get any other response number, then there is something wrong.
+    - Open Ditto, and you will see the values being updated in real-time.
       
       ![image](https://github.com/user-attachments/assets/45aa70d0-453c-421b-b55b-b00885a4ebd2)
 

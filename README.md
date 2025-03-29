@@ -30,7 +30,7 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
 
 ### Experiment 2: Creating the Python Script
 1. Download and Open the File
-    - Download the [generate_random_obd_data.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/generate_random_obd_data.py) and place it in the ‘kuksa-ditto’ folder.
+    - Download the [generate_random_obd_data.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/generate_random_obd_data.py) and place it in the `kuksa-ditto` folder.
 
 2. Import Required Modules
     - Add these imports at the top of the file.
@@ -74,7 +74,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 ### Experiment 5: Sending OBD Data to Kuksa Databroker
 
 1. Download and Open the File
-    - Download the [send_obd_data_to_kuksa.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/send_obd_data_to_kuksa.py) and place it in the ‘kuksa-ditto’ folder.
+    - Download the [send_obd_data_to_kuksa.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/send_obd_data_to_kuksa.py) and place it in the `kuksa-ditto` folder.
     - This is the same file created earlier with a few extra changes. The changes include:
         ```
         Lines 4 and 5 include new imports.
@@ -104,9 +104,9 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 
 ### Experiment 6: Receiving OBD Data from Kuksa Databroker
 1. Create File
-    - Create a file in the ‘kuksa-ditto’ folder named ‘retrieve_obd_data_from_kuksa.py’.
+    - Create a file in the ‘kuksa-ditto’ folder named `retrieve_obd_data_from_kuksa.py`.
 2. Copy This Code into the File
-    - This file appears similar to the ‘send_obd_data_to_kuksa.py’ file, but is focused on retrieving the data from the Databroker. 
+    - This file appears similar to the `send_obd_data_to_kuksa.py` file, but is focused on retrieving the data from the Databroker. 
 3. Complete the Code
 4. Activate the Virtual Environment
     - Open a new terminal and activate the previously created virtual environment.
@@ -298,10 +298,10 @@ def put_feature_value(thingID, feature, value):
         ```
 
 5. Print The Response
-    - For each function call in step 4, the response variable will store the result of the put_feature_value function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
+    - For each function call in step 4, the response variable will store the result of the `put_feature_value` function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
       
 6. Copy The Following Code
-    - Copy this code and paste it after the main function but above the ‘asyncio.run(main())’ line. It will be outside the main function.
+    - Copy this code and paste it after the main function but above the `asyncio.run(main())` line. It will be outside the main function.
 		```python
 		# STEP 1
 		# with open("_______", "r") as dittoFile:
@@ -319,13 +319,13 @@ def put_feature_value(thingID, feature, value):
 		```
 
 7. Uncomment Step 1 Code
-    - Uncomment the code under Step 1 and also comment the final line: ‘asyncio.run(main())’. It will look like this:
+    - Uncomment the code under Step 1 and also comment the final line: `asyncio.run(main())`. It will look like this:
       
       ![image](https://github.com/user-attachments/assets/7a1fb92d-c27e-4f6e-836d-396d13378e2d)
 
 
 8. Open Policy File
-    - Open the ‘policy.json’ file already created inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
+    - Open the `policy.json` file already created inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
 
 9. Go Back to Current File
     - Go back to the Step 1 code and fill in the blank.
@@ -340,7 +340,7 @@ def put_feature_value(thingID, feature, value):
 
 
 12. Open Thing File
-    - Open the ‘VSS_Ditto.json’ file already created inside the current folder. This file helps link our Thing with the created policy and also defines the features of our Thing.
+    - Open the `VSS_Ditto.json` file already created inside the current folder. This file helps link our Thing with the created policy and also defines the features of our Thing.
 13. Go Back to Current File
     - Go back to the Step 2 code and fill in the blank.
 14. Execute the File

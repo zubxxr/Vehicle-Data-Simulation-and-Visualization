@@ -63,15 +63,14 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 
 ### Experiment 4: Powering up Kuksa.VAL 
 
-1. Execute Commands
-    - Run these commands to start the Kuksa Databroker. Some of them may take a while.
-        ```bash
-        cd ~/kuksa-databroker
-        docker run --rm -it -p 55555:55555 -v "$(pwd)/OBD.json:/OBD.json" ghcr.io/eclipse-kuksa/kuksa-databroker:main --insecure --vss /OBD.json
-        ```
+1. Launch the Kuksa Databroker in a Docker Container
+	```bash
+	cd ~/kuksa-databroker
+	docker run --rm -it -p 55555:55555 -v "$(pwd)/OBD.json:/OBD.json" ghcr.io/eclipse-kuksa/kuksa-databroker:main --insecure --vss /OBD.json
+	```
 
-    - Here is the output after executing the final command, which starts the Databroker server.
-        ![image](https://github.com/user-attachments/assets/ce0ae01e-d119-4b4b-86b6-e13addc58d94)
+- Here is the output after executing the final command, which starts the Databroker server.
+	![image](https://github.com/user-attachments/assets/ce0ae01e-d119-4b4b-86b6-e13addc58d94)
 
 
 ### Experiment 5: Sending OBD Data to Kuksa Databroker

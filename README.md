@@ -94,13 +94,16 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
         source venv/bin/activate
         pip install kuksa-client
         ```
-4. Install the Package inside the Virtual Environment
+4. Install the packages inside the Virtual Environment
         ```bash
         pip install kuksa-client
+	pip install requests
         ```
    
-5. Execute The File
-    - Finally, execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Just make sure that the Kuksa Databroker is also running in another terminal. Here is an example of its output:
+6. Execute The File
+    - Execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Launch the Databroker first, then the script.
+      
+      ![image](https://github.com/user-attachments/assets/f19bbc03-4bbe-4572-805f-220b78f74a5f)
 
 ### Experiment 6: Receiving OBD Data from Kuksa Databroker
 1. Create File
@@ -111,8 +114,11 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 4. Activate the Virtual Environment
     - Open a new terminal and activate the previously created virtual environment.
 5. Execute The Script
-    - Launch the Databroker first, then the script.
-      ![image](https://github.com/user-attachments/assets/f19bbc03-4bbe-4572-805f-220b78f74a5f)
+    - Launch the Databroker first, then the `send_obd_data_to_kuksa.py` script, and lastly the `retrieve_obd_data_from_kuksa.py` script.
+
+      ![image](https://github.com/user-attachments/assets/c16f22b3-0864-4c84-9a4e-5c9595babf84)
+
+      
 
 
 ## Module 4: Eclipse Ditto
@@ -325,31 +331,38 @@ def put_feature_value(thingID, feature, value):
 
 
 8. Open Policy File
-    - Open the `policy.json` file already created inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
+    - Open the `policy.json` file inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
 
 9. Go Back to Current File
     - Go back to the Step 1 code and fill in the blank.
 
 10. Execute the File
-    - Execute the file. You will receive a message exactly the same as this after execution.
+    - Make sure your virtual environment is activated and execute the file. You will receive a message exactly the same as this after execution.
+      
+      ![image](https://github.com/user-attachments/assets/344fe372-6627-4a5f-946f-b2d075e999a3)
+
 
 11. Uncomment Step 2 Code
     - Next, go back to the file, comment the Step 1 code, and uncomment the Step 2 code. It will look like this:
 
       ![image](https://github.com/user-attachments/assets/3947c3a6-0db9-48c4-ac23-3473a3f4dea0)
 
-
-12. Open Thing File
+12. Open File
     - Open the `VSS_Ditto.json` file already created inside the current folder. This file helps link our Thing with the created policy and also defines the features of our Thing.
+      
 13. Go Back to Current File
     - Go back to the Step 2 code and fill in the blank.
-14. Execute the File
-    - Execute the file. You will receive a message exactly the same as this after execution. If you get any other response number, then it did not work.
       
-      ![image](https://github.com/user-attachments/assets/55c284f4-3897-4549-bf00-811dd92deac4)
+14. Execute the File
+    - Make sure your virtual environment is activated and execute the file. You will receive a message exactly the same as this after execution. If you get any other response number, then it did not work.
+      
+      ![image](https://github.com/user-attachments/assets/93b3647b-75dc-469f-9184-626e52d74d0c)
 
 15. Uncomment the Main Function Call
     - Now, comment the Step 2 code, and uncomment the main function call. We are now done with creating the Thing and Policy, and can now go back to the main function, which will send the received data to Ditto.
       
 16. Execute the File
-    - Finally, for the final time, you can execute the file again. However, make sure that the Kuksa Databroker is running, and the ‘send_obd_data_to_kuksa.py’ file is also running. After executing the file, you should see the received messages appear in the terminal, along with the response number being 204. This means that the messages are being successfully sent to Ditto. If you get any other response number, then there is something wrong.
+    - Execute the file again. However, make sure that the Kuksa Databroker is running, and the `send_obd_data_to_kuksa.py` file is also running. After executing the file, you should see the received messages appear in the terminal, along with the response number being 204. This means that the messages are being successfully sent to Ditto. If you get any other response number, then there is something wrong.
+      
+      ![image](https://github.com/user-attachments/assets/45aa70d0-453c-421b-b55b-b00885a4ebd2)
+

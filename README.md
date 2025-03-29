@@ -262,7 +262,7 @@ def put_feature_value(thingID, feature, value):
     return response
 ```
 
-#### Task 6: Sending OBD Data to Eclipse Ditto
+### Task 6: Sending OBD Data to Eclipse Ditto
 
 1. Copy File
     - Create a copy of your completed `retrieve_obd_data_from_kuksa.py` file, rename it to `send_recieved_obd_data_to_ditto.py` and place it inside the `kuksa-ditto` folder.

@@ -40,18 +40,19 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
       ```
 
 3. Generate Random Values for Features
-    - Use the random module to generate random values for each feature within the specified ranges:
+    - Use the random library to generate random values for each feature within the specified ranges:
       ```
       Vehicle Speed: Generate random integers between 0 and 255.
       Engine Speed: Generate random integers between 0 and 1000. 
       Throttle Position: Generate random integers between 0 and 200.
       Coolant Temperature: Generate random integers between 0 and 500.
       ```
+
 4. Print Each Feature Value
     - Display the generated values for each feature.
+      
 5. Pause and Repeat
-    - Pause for 1 second, then repeat the process.
-
+    - Use the time library to pause the script for 1 second.
 
 ## Module 3: Intro to Eclipse Kuksa.VAL and Data Orchestration
 

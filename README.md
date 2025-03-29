@@ -23,6 +23,7 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
 4. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
     - Policy.json: https://drive.google.com/file/d/1LfGWvJiX5lDKcYwHK5baw3grXGgXEdY2/view?usp=sharing
     - VSS_Ditto.json: https://drive.google.com/file/d/144SDC-i9sqOTQRbiWMvzpZrCGNOI0FQz/view?usp=drive_link
+      
 ## Module 2: 
 Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time vehicle data, mimicking data typically provided by a vehicle's OBD system, such as engine parameters and fuel consumption. Through a simple Python script, participants will learn how to generate random OBD data, laying the foundation for developing a digital twin. This module also introduces OBD2, a standardized system used for vehicle diagnostics since 1991, which helps with tasks like vehicle logging, real-time diagnostics, predictive maintenance, and vehicle black box logging.
 
@@ -61,17 +62,12 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
     - Run these commands to start the Kuksa Databroker. Some of them may take a while.
         ```bash
         cd ~/kuksa-databroker
-        sudo apt update
-        sudo apt install build-essential
-        sudo apt install curl
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-        echo '. "$HOME/.cargo/env"' >> ~/.bashrc
-        source ~/.bashrc
-        cargo run --bin databroker -- --vss OBD.json
+        docker run --rm -it -p 55555:55555 -v "$(pwd)/OBD.json:/OBD.json" ghcr.io/eclipse-kuksa/kuksa-databroker:main --insecure --vss /OBD.json
         ```
 
     - Here is the output after executing the final command, which starts the Databroker server.
-        ![image](https://github.com/user-attachments/assets/b6aa2515-6330-433d-9810-138c7556c5ff)
+        ![image](https://github.com/user-attachments/assets/ce0ae01e-d119-4b4b-86b6-e13addc58d94)
+
 
 ### Experiment 5: Sending OBD Data to Kuksa Databroker
 

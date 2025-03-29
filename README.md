@@ -293,7 +293,7 @@ def put_feature_value(thingID, feature, value):
         ```python
         response = put_feature_value('org.vehicle:my-device' , 'VehicleSpeed' , VehicleSpeed)
         response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
-        response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
+        response = put_feature_value('org.vehicle:my-device' , 'ThrottlePosition' , ThrottlePosition)
         response = put_feature_value('org.vehicle:my-device' , 'CoolantTemperature' , CoolantTemperature)
         ```
 

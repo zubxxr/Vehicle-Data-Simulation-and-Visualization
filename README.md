@@ -290,11 +290,11 @@ def put_feature_value(thingID, feature, value):
 
 4. Use The Following Function To Receive a Response
     - At the bottom of the file where the print statements are, put each line under their respective print statement:
-        ```
-        - response = put_feature_value('org.vehicle:my-device' , 'VehicleSpeed' , VehicleSpeed)
-        - response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
-        - response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
-        - response = put_feature_value('org.vehicle:my-device' , 'CoolantTemperature' , CoolantTemperature)
+        ```python
+        response = put_feature_value('org.vehicle:my-device' , 'VehicleSpeed' , VehicleSpeed)
+        response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
+        response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
+        response = put_feature_value('org.vehicle:my-device' , 'CoolantTemperature' , CoolantTemperature)
         ```
 
 5. Print The Response

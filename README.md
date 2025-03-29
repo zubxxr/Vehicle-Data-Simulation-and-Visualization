@@ -1,4 +1,4 @@
-# sq_6: Software Defined Vehicle (SDV) World
+# Optional Lab 6: Software Defined Vehicle (SDV) World
 This module explores Software Defined Vehicles (SDVs), focusing on real-time vehicle data collection and the construction of an SDV stack from scratch. It covers the basics of SDVs, including their architecture, advantages like dynamic feature access, advanced onboard safety, and seamless connectivity, as well as challenges such as exponential software growth, industry competition, and cybersecurity risks. Participants will learn about SDV components like user applications, instrumentation, embedded OS, and hardware, and how tools like Kuksa.VAL simplify data integration for SDVs. The course will also delve into hands-on experiments to help students develop skills in SDV architecture and testing.
 
 ### Task 0: Setting Up The Workspace

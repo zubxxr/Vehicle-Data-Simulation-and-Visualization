@@ -1,10 +1,7 @@
-# sq_6
-
-
-## Module 1: The Software Defined Vehicle (SDV) World
+# sq_6: Software Defined Vehicle (SDV) World
 This module explores Software Defined Vehicles (SDVs), focusing on real-time vehicle data collection and the construction of an SDV stack from scratch. It covers the basics of SDVs, including their architecture, advantages like dynamic feature access, advanced onboard safety, and seamless connectivity, as well as challenges such as exponential software growth, industry competition, and cybersecurity risks. Participants will learn about SDV components like user applications, instrumentation, embedded OS, and hardware, and how tools like Kuksa.VAL simplify data integration for SDVs. The course will also delve into hands-on experiments to help students develop skills in SDV architecture and testing.
 
-### Task 1: Setting Up The Workspace
+### Task 0: Setting Up The Workspace
 
 1. **Clone the Kuksa Databroker repository to your home directory**  
    ```bash
@@ -25,10 +22,10 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
     - [policy.json](https://github.com/zubxxr/sq_6/blob/main/policy.json)
     - [VSS_Ditto.json](https://github.com/zubxxr/sq_6/blob/main/VSS_Ditto.json)
       
-## Module 2: Simulating On-Board Diagnostics (OBD)
-Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time vehicle data, mimicking data typically provided by a vehicle's OBD system, such as engine parameters and fuel consumption. Through a simple Python script, participants will learn how to generate random OBD data, laying the foundation for developing a digital twin. This module also introduces OBD2, a standardized system used for vehicle diagnostics since 1991, which helps with tasks like vehicle logging, real-time diagnostics, predictive maintenance, and vehicle black box logging.
+## 1. Simulating On-Board Diagnostics (OBD)
+This task focuses on simulating on-board diagnostics (OBD) to generate real-time vehicle data, mimicking data typically provided by a vehicle's OBD system, such as engine parameters and fuel consumption. Through a simple Python script, you will learn how to generate random OBD data, laying the foundation for developing a digital twin. 
 
-### Task 2: Creating the Python Script
+### Task 1: Creating the Python Script
 1. Download and Open the File
     - Download the [generate_random_obd_data.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/generate_random_obd_data.py) and place it in the `kuksa-ditto` folder.
 
@@ -57,11 +54,10 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
 6. Execute the Script
    ![image](https://github.com/user-attachments/assets/0ee41e34-fc20-48e3-a959-d2416041e7ca)
 
-## Module 3: Intro to Eclipse Kuksa.VAL and Data Orchestration
+## 2. Intro to Eclipse Kuksa.VAL and Data Orchestration
+This section covers integrating simulated OBD data with the Kuksa Vehicle Abstraction Layer (VAL) platform. You will learn how to send OBD data to Kuksa and retrieve that data.
 
-Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstraction Layer (VAL) platform. Participants will learn about the Kuksa VAL architecture, its components, and how to send OBD data to Kuksa and Ditto. In the experiment, they will run the Kuksa broker, update a script to send OBD data, and set up another script to receive it, enabling real-time integration of vehicle data into Kuksa. The module also explores the Vehicle Signal Specification (VSS), which standardizes vehicle signal definitions and categorizes them into sensors, actuators, and attributes. The Kuksa VAL system architecture, including VSS servers, clients, data providers, and actuation providers, is essential for managing vehicle data efficiently.
-
-### Task 3: Powering up Kuksa.VAL 
+### Task 2: Powering up Kuksa.VAL 
 
 1. Launch the Kuksa Databroker in a Docker Container
 	```bash
@@ -71,7 +67,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 	![image](https://github.com/user-attachments/assets/ce0ae01e-d119-4b4b-86b6-e13addc58d94)
 
 
-### Task 4: Sending OBD Data to Kuksa Databroker
+### Task 3: Sending OBD Data to Kuksa Databroker
 
 1. Download and Open the File
     - Download the [send_obd_data_to_kuksa.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/send_obd_data_to_kuksa.py) and place it in the `kuksa-ditto` folder.
@@ -105,7 +101,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
       
       ![image](https://github.com/user-attachments/assets/f19bbc03-4bbe-4572-805f-220b78f74a5f)
 
-### Task 5: Receiving OBD Data from Kuksa Databroker
+### Task 4: Receiving OBD Data from Kuksa Databroker
 1. Create File
     - Create a file in the ‘kuksa-ditto’ folder named `retrieve_obd_data_from_kuksa.py`.
 2. Copy This Code into the File
@@ -121,11 +117,10 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
       
 
 
-## Module 4: Eclipse Ditto
+## 3. Eclipse Ditto
+Eclipse Ditto is an IoT backend solution that uses digital twins to create cloud-based virtual representations of real-world objects or devices. It serves as IoT middleware, facilitating communication between physical devices and external systems. Through APIs, Ditto enables seamless integration of data, allowing the exchange of information, modification, or retrieval of data. You will learn how to engage in an experiment where you will launch Eclipse Ditto and its user interface.
 
-Module 4 focuses on Eclipse Ditto, explaining its features and how the digital twin concept operates. Participants will learn about key concepts such as Things, Policies, and their interactions. Eclipse Ditto is an IoT backend solution that uses digital twins to create cloud-based virtual representations of real-world objects or devices. It serves as IoT middleware, facilitating communication between physical devices and external systems. Through APIs, Ditto enables seamless integration of data, allowing the exchange of information, modification, or retrieval of data. Participants will also engage in an experiment where they will launch Eclipse Ditto and explore its user interface.
-
-### Task 6: Launching Eclipse Ditto
+### Task 5: Launching Eclipse Ditto
 1. Clone Repository
     - Open a terminal and enter the following commands.
         ```bash
@@ -156,9 +151,8 @@ Module 4 focuses on Eclipse Ditto, explaining its features and how the digital t
 4. Open the User Interface
     - Click the first bullet point `visit the Eclipse Ditto™ explorer UI to get started with your first digital twins`.
 
-## Module 5: Integration of Kuksa with Ditto
-
-Integration of Kuksa with Ditto introduces participants to the process of integrating Kuksa with the Ditto IoT platform to send real-time vehicle data, such as OBD information, to Ditto for simulating a digital twin. This module walks through the necessary steps for configuring URLs and authentication variables to interact with the Ditto platform. Participants will also learn about key functions, such as retrieving, updating, and deleting "things" and "policies," as well as managing features within the platform. The module ensures a seamless flow of data from Kuksa to Ditto for real-time monitoring and digital twin creation.
+## 4. Integration of Kuksa with Ditto
+This section involves integrating Kuksa with the Ditto IoT platform to send real-time vehicle data, such as OBD information, to Ditto for simulating a digital twin. It will walk you through the necessary steps for configuring URLs and authentication variables to interact with the Ditto platform.
 
 ### URLs and Authentication Variables
 The updates start with defining the URLs for the Things and Policies. These URLs are routed to list all the Things and Policies created on your device. Feel free to try entering the thingURL inside your web browser. The login and password will both be “ditto”, which was also defined in the last line as “auth”. However, the policyURL does not work.
@@ -268,7 +262,7 @@ def put_feature_value(thingID, feature, value):
     return response
 ```
 
-### Task 7: Sending OBD Data to Eclipse Ditto
+### Task 6: Sending OBD Data to Eclipse Ditto
 
 1. Copy File
     - Create a copy of your completed `retrieve_obd_data_from_kuksa.py` file, rename it to `send_recieved_obd_data_to_ditto.py` and place it inside the `kuksa-ditto` folder.

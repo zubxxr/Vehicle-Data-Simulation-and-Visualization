@@ -113,7 +113,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 
 Module 4 focuses on Eclipse Ditto, explaining its features and how the digital twin concept operates. Participants will learn about key concepts such as Things, Policies, and their interactions. Eclipse Ditto is an IoT backend solution that uses digital twins to create cloud-based virtual representations of real-world objects or devices. It serves as IoT middleware, facilitating communication between physical devices and external systems. Through APIs, Ditto enables seamless integration of data, allowing the exchange of information, modification, or retrieval of data. Participants will also engage in an experiment where they will launch Eclipse Ditto and explore its user interface.
 
-Experiment 6: Launching Eclipse Ditto
+### Experiment 6: Launching Eclipse Ditto
 1. Clone Repository
     - Open a terminal and enter the following commands.
         ```bash
@@ -137,3 +137,74 @@ Experiment 6: Launching Eclipse Ditto
 ## Module 5: Integration of Kuksa with Ditto
 
 Module 5: Integration of Kuksa with Ditto introduces participants to the process of integrating Kuksa with the Ditto IoT platform to send real-time vehicle data, such as OBD information, to Ditto for simulating a digital twin. This module walks through the necessary steps for configuring URLs and authentication variables to interact with the Ditto platform. Participants will also learn about key functions, such as retrieving, updating, and deleting "things" and "policies," as well as managing features within the platform. The module ensures a seamless flow of data from Kuksa to Ditto for real-time monitoring and digital twin creation.
+
+### Experiment 7: Sending OBD Data to Eclipse Ditto
+
+1. Copy File
+    - Create a copy of the retrieve_obd_data_from_kuksa.py file in the ‘kuksa-ditto’ folder and rename it to ‘send_recieved_obd_data_to_ditto.py’.
+2. Add These Imports 
+	- Add the following imports under the existing imports.
+        ```python
+        import json
+        import requests
+        ```
+
+
+3. Add The Following Code
+    - Add the following code at the top of the file under the imports. This code will be above the main function. You will find them at the start of this module under each of the following sections:
+        ```
+        - URLs and Authentication Variables
+        - Function 1: get_thing(thingID)
+        - Function 2: put_thing(thingID, ThingData)
+        - Function 3: patch_thing(thingID, ThingData)
+        - Function 4: delete_thing(thingID)
+        - Function 5: put_policy(policyID, PolicyData)
+        - Function 6: delete_policy(policyID)
+        - Function 7: get_feature_value(thingID, feature)
+        - Function 8: put_feature_value(thingID, feature, value)
+        ```
+
+4. Use The Following Function To Receive a Response
+    - At the bottom of the file where the print statements are, put each line under their respective print statement:
+        ```
+        - response = put_feature_value('org.vehicle:my-device' , 'VehicleSpeed' , VehicleSpeed)
+        - response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
+        - response = put_feature_value('org.vehicle:my-device' , 'EngineSpeed' , EngineSpeed)
+        - response = put_feature_value('org.vehicle:my-device' , 'CoolantTemperature' , CoolantTemperature)
+        ```
+
+5. Print The Response
+    - For each function call, the response variable will store the result of the put_feature_value function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
+      
+6. Copy The Following Code
+    - Copy this code and paste it after the main function but above the ‘asyncio.run(main())’ line.
+
+7. Uncomment Step 1 Code
+    - Uncomment the code under Step 1 and also comment the final line: ‘asyncio.run(main())’. It will look like this:
+
+8. Open Policy File
+    - Open the ‘policy.json’ file already created inside the current folder. This file helps grant our Thing the correct policies such as read and write abilities. 
+
+9. Go Back to Current File
+    - Go back to the Step 1 code and fill in the blank.
+
+10. Execute the File
+    - Execute the file. You will receive a message exactly the same as this after execution.
+
+11. Uncomment Step 2 Code
+    - Next, go back to the file, comment the Step 1 code, and uncomment the Step 2 code. It will look like this:
+
+12. Open Thing File
+    - Open the ‘VSS_Ditto.json’ file already created inside the current folder. This file helps link our Thing with the created policy and also defines the features of our Thing.
+13. Go Back to Current File
+    - Go back to the Step 2 code and fill in the blank.
+14. Execute the File
+    - Execute the file. You will receive a message exactly the same as this after execution. If you get any other response number, then it did not work.
+      
+      ![image](https://github.com/user-attachments/assets/55c284f4-3897-4549-bf00-811dd92deac4)
+
+15. Uncomment the Main Function Call
+    - Now, comment the Step 2 code, and uncomment the main function call. We are now done with creating the Thing and Policy, and can now go back to the main function, which will send the received data to Ditto.
+      
+16. Execute the File
+    - Finally, for the final time, you can execute the file again. However, make sure that the Kuksa Databroker is running, and the ‘send_obd_data_to_kuksa.py’ file is also running. After executing the file, you should see the received messages appear in the terminal, along with the response number being 204. This means that the messages are being successfully sent to Ditto. If you get any other response number, then there is something wrong.

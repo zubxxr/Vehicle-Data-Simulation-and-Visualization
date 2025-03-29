@@ -29,8 +29,8 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
 Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time vehicle data, mimicking data typically provided by a vehicle's OBD system, such as engine parameters and fuel consumption. Through a simple Python script, participants will learn how to generate random OBD data, laying the foundation for developing a digital twin. This module also introduces OBD2, a standardized system used for vehicle diagnostics since 1991, which helps with tasks like vehicle logging, real-time diagnostics, predictive maintenance, and vehicle black box logging.
 
 ### Experiment 2: Creating the Python Script
-1. Create File
-    - Create a file inside the ‘kuksa-ditto’ folder and name it ‘generate_random_obd_data.py’.
+1. Download and Open the File
+    - Download the [generate_random_obd_data.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/generate_random_obd_data.py) and place it in the ‘kuksa-ditto’ folder.
 
 2. Import Required Modules
     - Add these imports at the top of the file.
@@ -38,7 +38,7 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
       import random
       import time
       ```
-
+      
 3. Generate Random Values for Features
     - Use the random library to generate random values for each feature within the specified ranges:
       ```

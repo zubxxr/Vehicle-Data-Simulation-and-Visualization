@@ -98,7 +98,7 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 5. Execute The File
     - Finally, execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Just make sure that the Kuksa Databroker is also running in another terminal. Here is an example of its output:
 
-### Experiment 3: Receiving OBD Data from Kuksa Databroker
+### Experiment 6: Receiving OBD Data from Kuksa Databroker
 1. Create File
     - Create a file in the ‘kuksa-ditto’ folder named ‘retrieve_obd_data_from_kuksa.py’.
 2. Copy This Code into the File
@@ -109,4 +109,31 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 5. Execute The File
     - First keep the ‘send_obd_data_to_kuksa.py’ file running in one terminal, and then execute the file just created in the activated virtual environment. It should be receiving the exact same messages being generated from the ‘send_obd_data_to_kuksa.py’ file. Here is an example of the output:
 
+## Module 4: Eclipse Ditto
 
+Module 4 focuses on Eclipse Ditto, explaining its features and how the digital twin concept operates. Participants will learn about key concepts such as Things, Policies, and their interactions. Eclipse Ditto is an IoT backend solution that uses digital twins to create cloud-based virtual representations of real-world objects or devices. It serves as IoT middleware, facilitating communication between physical devices and external systems. Through APIs, Ditto enables seamless integration of data, allowing the exchange of information, modification, or retrieval of data. Participants will also engage in an experiment where they will launch Eclipse Ditto and explore its user interface.
+
+Experiment 6: Launching Eclipse Ditto
+1. Clone Repository
+    - Open a terminal and enter the following commands.
+        ```bash
+        git clone https://github.com/eclipse-ditto/ditto ~/
+        cd ~/ditto
+        ```
+    
+2. Start Ditto
+    - Navigate to the repository and enter these commands in the terminal.
+        ```bash
+        cd ~/ditto/deployment/docker/
+        docker-compose up -d
+        ```
+    
+3. Open URL
+    - Open this url in your browser: http://localhost:8080
+      
+4. Open the User Interface
+    - Click the first bullet point ‘visit the Eclipse Ditto™ explorer UI to get started with your first digital twins’.
+
+## Module 5: Integration of Kuksa with Ditto
+
+Module 5: Integration of Kuksa with Ditto introduces participants to the process of integrating Kuksa with the Ditto IoT platform to send real-time vehicle data, such as OBD information, to Ditto for simulating a digital twin. This module walks through the necessary steps for configuring URLs and authentication variables to interact with the Ditto platform. Participants will also learn about key functions, such as retrieving, updating, and deleting "things" and "policies," as well as managing features within the platform. The module ensures a seamless flow of data from Kuksa to Ditto for real-time monitoring and digital twin creation.

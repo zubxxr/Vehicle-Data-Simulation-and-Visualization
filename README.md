@@ -148,7 +148,7 @@ Module 4 focuses on Eclipse Ditto, explaining its features and how the digital t
     - Open this url in your browser: http://localhost:8080
       
 4. Open the User Interface
-    - Click the first bullet point ‘visit the Eclipse Ditto™ explorer UI to get started with your first digital twins’.
+    - Click the first bullet point `visit the Eclipse Ditto™ explorer UI to get started with your first digital twins`.
 
 ## Module 5: Integration of Kuksa with Ditto
 

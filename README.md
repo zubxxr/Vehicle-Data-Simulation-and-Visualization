@@ -13,13 +13,13 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
    ```
     
 2. **Download the OBD file and place it inside the `kuksa-databroker` folder.**  
-   - [OBD.json](https://drive.google.com/file/d/1FIUlDSE6YCA7jLLp798unJA9cq2-2TCr/view?usp=sharing)
+   - [OBD.json](https://github.com/zubxxr/sq_6/blob/main/OBD.json)
 
 3. **Create a new folder called `kuksa-ditto` inside the `kuksa-databroker` folder.**  
    ```bash
    cd ~/kuksa-databroker
    mkdir kuksa-ditto
-
+   ```
     
 5. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
     - Policy.json: https://drive.google.com/file/d/1LfGWvJiX5lDKcYwHK5baw3grXGgXEdY2/view?usp=sharing

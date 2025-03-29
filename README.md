@@ -178,88 +178,88 @@ def get_thing(thingID):
 This function creates a new "thing" with the given thingID and ThingData. If a thing with the same ID already exists, it asks the user if they want to overwrite it. If the user agrees, it updates the existing thing with the new data.
 ```python
 def put_thing(thingID, ThingData):
-	thing = get_thing(thingID)
-	url = thingsURL + thingID
-	if (thing == None):
-    	   headers = {"Content-Type": "Application/json"}
-    	   response = requests.put(url, json=ThingData, headers=headers, auth=auth)
-    	   return response
-	else:
-    	   print("There is a thing already created with same thingID")
-    	   print("Do you want to overwrite it(y/n)?")
-    	   answer = input()
-    	   if answer.lower() == 'y':
-        	headers = {"Content-Type": "Application/json"}
-        	response = requests.put(url, json=ThingData, headers=headers, auth=auth)
-        	return response
+    thing = get_thing(thingID)
+    url = thingsURL + thingID
+    if thing is None:
+        headers = {"Content-Type": "Application/json"}
+        response = requests.put(url, json=ThingData, headers=headers, auth=auth)
+        return response
+    else:
+        print("There is a thing already created with the same thingID")
+        print("Do you want to overwrite it (y/n)?")
+        answer = input()
+        if answer.lower() == 'y':
+            headers = {"Content-Type": "Application/json"}
+            response = requests.put(url, json=ThingData, headers=headers, auth=auth)
+            return response
 ```
 
 ### Function 3: patch_thing(thingID, ThingData)
 This function partially updates an existing "thing" with the provided ThingData. It only modifies the fields specified in the ThingData, leaving other fields unchanged.
 ```python
 def patch_thing(thingID, ThingData):
-	url = thingsURL + thingID
-	headers = {"Content-Type": "Application/merget-patch+json"}
-	response = requests.patch(url, json=ThingData, headers=headers, auth=auth)
-	return response
+    url = thingsURL + thingID
+    headers = {"Content-Type": "Application/merge-patch+json"}
+    response = requests.patch(url, json=ThingData, headers=headers, auth=auth)
+    return response
 ```
 
 ### Function 4: delete_thing(thingID)
 This function deletes a specific "thing" identified by thingID from the system.
 ```python
 def delete_thing(thingID):
-	url = thingsURL + thingID
-	response = requests.delete(url, auth=auth)
-	return response
+    url = thingsURL + thingID
+    response = requests.delete(url, auth=auth)
+    return response
 ```
 
 ### Function 5: put_policy(policyID, PolicyData)
 This function creates or updates a policy with the specified policyID and PolicyData. It ensures that the policy is stored with the provided details.
 ```python
-def put_policy (policyID, PolicyData):
-	url = policiesURL + policyID
-	headers = {"Content-Type": "Application/json"}
-	response = requests.put(url, json=PolicyData, headers=headers, auth=auth)
-	return response.json()
+def put_policy(policyID, PolicyData):
+    url = policiesURL + policyID
+    headers = {"Content-Type": "Application/json"}
+    response = requests.put(url, json=PolicyData, headers=headers, auth=auth)
+    return response.json()
 ```
 
 ### Function 6: delete_policy(policyID)
 This function deletes a specific "policy" identified by policyID from the system.
 ```python
 def delete_policy(policyID):
-	url = policiesURL + policyID
-	response = requests.delete(url, auth=auth)
-	if response.status_code == 204:
-    	   print(f"Policy '{policyID}' successfully deleted.")
-	else:
-    	   print(f"Failed to delete policy '{policyID}'. Status code: {response.status_code}, Response: {response.text}")
-	return response
+    url = policiesURL + policyID
+    response = requests.delete(url, auth=auth)
+    if response.status_code == 204:
+        print(f"Policy '{policyID}' successfully deleted.")
+    else:
+        print(f"Failed to delete policy '{policyID}'. Status code: {response.status_code}, Response: {response.text}")
+    return response
 ```
 
 ### Function 7: get_feature_value(thingID, feature)
 This function retrieves the value of a specific feature of a "thing" identified by thingID. It returns the value as a floating-point number if successful.
 ```python
 def get_feature_value(thingID, feature):
-	url = thingsURL + thingID + "/features/" + feature + "/properties/value"
-	response = requests.get(url, auth=auth)
-	if response.status_code == 200:
-    	   value = float(response.json())
-    	   return value
-	else:
-    	   return response
+    url = thingsURL + thingID + "/features/" + feature + "/properties/value"
+    response = requests.get(url, auth=auth)
+    if response.status_code == 200:
+        value = float(response.json())
+        return value
+    else:
+        return response
 ```
 
 ### Function 8: put_feature_value(thingID, feature, value)
 This function sets or updates the value of a specific feature for a "thing" identified by thingID. The new value is provided in the value parameter.
 ```python
 def put_feature_value(thingID, feature, value):
-	url = thingsURL + thingID + "/features/" + feature + "/properties"
-	headers = {"Content-Type": "Application/json"}
-	data = {
-    	   "value": value
-	}
-	response = requests.put(url, json=data, headers=headers, auth=auth)
-	return response
+    url = thingsURL + thingID + "/features/" + feature + "/properties"
+    headers = {"Content-Type": "Application/json"}
+    data = {
+        "value": value
+    }
+    response = requests.put(url, json=data, headers=headers, auth=auth)
+    return response
 ```
 
 ### Experiment 7: Sending OBD Data to Eclipse Ditto

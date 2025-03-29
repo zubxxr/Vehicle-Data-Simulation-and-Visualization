@@ -2,6 +2,33 @@ import asyncio
 from kuksa_client.grpc.aio import VSSClient
 import time
 
+# URLs and Authentication Variables
+
+
+# Function 1: get_thing(thingID)
+
+
+# Function 2: put_thing(thingID, ThingData)
+
+
+# Function 3: patch_thing(thingID, ThingData)
+
+
+# Function 4: delete_thing(thingID)
+
+
+# Function 5: put_policy(policyID, PolicyData)
+
+
+# Function 6: delete_policy(policyID)
+
+
+# Function 7: get_feature_value(thingID, feature)
+
+
+# Function 8: put_feature_value(thingID, feature, value)
+
+
 # Asynchronous main function to connect to Kuksa Databroker and retrieve OBD data
 async def main():
 

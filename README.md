@@ -22,8 +22,8 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
    ```
     
 5. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
-    - Policy.json: https://drive.google.com/file/d/1LfGWvJiX5lDKcYwHK5baw3grXGgXEdY2/view?usp=sharing
-    - VSS_Ditto.json: https://drive.google.com/file/d/144SDC-i9sqOTQRbiWMvzpZrCGNOI0FQz/view?usp=drive_link
+    - [policy.json](https://github.com/zubxxr/sq_6/blob/main/policy.json)
+    - [VSS_Ditto.json](https://github.com/zubxxr/sq_6/blob/main/VSS_Ditto.json)
       
 ## Module 2: 
 Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time vehicle data, mimicking data typically provided by a vehicle's OBD system, such as engine parameters and fuel consumption. Through a simple Python script, participants will learn how to generate random OBD data, laying the foundation for developing a digital twin. This module also introduces OBD2, a standardized system used for vehicle diagnostics since 1991, which helps with tasks like vehicle logging, real-time diagnostics, predictive maintenance, and vehicle black box logging.

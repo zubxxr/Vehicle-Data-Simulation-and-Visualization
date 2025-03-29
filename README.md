@@ -5,22 +5,23 @@
 This module explores Software Defined Vehicles (SDVs), focusing on real-time vehicle data collection and the construction of an SDV stack from scratch. It covers the basics of SDVs, including their architecture, advantages like dynamic feature access, advanced onboard safety, and seamless connectivity, as well as challenges such as exponential software growth, industry competition, and cybersecurity risks. Participants will learn about SDV components like user applications, instrumentation, embedded OS, and hardware, and how tools like Kuksa.VAL simplify data integration for SDVs. The course will also delve into hands-on experiments to help students develop skills in SDV architecture and testing.
 
 ### Experiment 1: Setting Up The Workspace
-1. Clone the Kuksa Databroker Repository
-    ```bash
-    git clone https://github.com/eclipse-kuksa/kuksa-databroker ~/
-    cd ~/kuksa-databroker
-    ```
+
+1. **Clone the Kuksa Databroker repository to your home directory**  
+   ```bash
+   git clone https://github.com/eclipse-kuksa/kuksa-databroker ~/  
+   cd ~/kuksa-databroker
+   ```
     
-2. Download the OBD file and place it inside the ‘kuksa-databroker’ folder.
-    - OBD.json: https://drive.google.com/file/d/1FIUlDSE6YCA7jLLp798unJA9cq2-2TCr/view?usp=sharing
-      
-3. Create a New Folder called ‘kuksa-ditto’ inside the ‘kuksa-databroker’ folder.
-    ```bash
-    cd ~/kuksa-databroker
-    mkdir kuksa-ditto
-    ```
+2. **Download the OBD file and place it inside the `kuksa-databroker` folder.**  
+   - [OBD.json](https://drive.google.com/file/d/1FIUlDSE6YCA7jLLp798unJA9cq2-2TCr/view?usp=sharing)
+
+3. **Create a new folder called `kuksa-ditto` inside the `kuksa-databroker` folder.**  
+   ```bash
+   cd ~/kuksa-databroker
+   mkdir kuksa-ditto
+
     
-4. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
+5. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
     - Policy.json: https://drive.google.com/file/d/1LfGWvJiX5lDKcYwHK5baw3grXGgXEdY2/view?usp=sharing
     - VSS_Ditto.json: https://drive.google.com/file/d/144SDC-i9sqOTQRbiWMvzpZrCGNOI0FQz/view?usp=drive_link
       

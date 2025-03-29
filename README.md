@@ -54,7 +54,7 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
 5. Pause and Repeat
     - Use the time library to pause the script for 1 second.
 
-6. Test the Script
+6. Execute the Script
    ![image](https://github.com/user-attachments/assets/0ee41e34-fc20-48e3-a959-d2416041e7ca)
 
 ## Module 3: Intro to Eclipse Kuksa.VAL and Data Orchestration
@@ -106,8 +106,10 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 3. Complete the Code
 4. Activate the Virtual Environment
     - Open a new terminal and activate the previously created virtual environment.
-5. Execute The File
-    - First keep the ‘send_obd_data_to_kuksa.py’ file running in one terminal, and then execute the file just created in the activated virtual environment. It should be receiving the exact same messages being generated from the ‘send_obd_data_to_kuksa.py’ file. Here is an example of the output:
+5. Execute The Script
+    - Launch the Databroker first, then the script.
+      ![image](https://github.com/user-attachments/assets/f19bbc03-4bbe-4572-805f-220b78f74a5f)
+
 
 ## Module 4: Eclipse Ditto
 

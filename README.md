@@ -54,6 +54,9 @@ Module 2 focuses on simulating on-board diagnostics (OBD) to generate real-time 
 5. Pause and Repeat
     - Use the time library to pause the script for 1 second.
 
+6. Test the Script
+   ![image](https://github.com/user-attachments/assets/0ee41e34-fc20-48e3-a959-d2416041e7ca)
+
 ## Module 3: Intro to Eclipse Kuksa.VAL and Data Orchestration
 
 Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstraction Layer (VAL) platform. Participants will learn about the Kuksa VAL architecture, its components, and how to send OBD data to Kuksa and Ditto. In the experiment, they will run the Kuksa broker, update a script to send OBD data, and set up another script to receive it, enabling real-time integration of vehicle data into Kuksa. The module also explores the Vehicle Signal Specification (VSS), which standardizes vehicle signal definitions and categorizes them into sensors, actuators, and attributes. The Kuksa VAL system architecture, including VSS servers, clients, data providers, and actuation providers, is essential for managing vehicle data efficiently.

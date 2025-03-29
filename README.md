@@ -88,14 +88,18 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 
 3. Create a Virtual Environment
     - Create a virtual environment `(Command is for Linux)` in the same directory as the created files. 
-        ```
+        ```bash
         cd ~/kuksa-databroker/kuksa-ditto
         python3 -m venv venv
         source venv/bin/activate
         pip install kuksa-client
         ```
-
-4. Execute The File
+4. Install the Package inside the Virtual Environment
+        ```bash
+        pip install kuksa-client
+        ```
+   
+5. Execute The File
     - Finally, execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Just make sure that the Kuksa Databroker is also running in another terminal. Here is an example of its output:
 
 ### Experiment 6: Receiving OBD Data from Kuksa Databroker

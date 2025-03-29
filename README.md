@@ -126,12 +126,22 @@ Module 4 focuses on Eclipse Ditto, explaining its features and how the digital t
         git clone https://github.com/eclipse-ditto/ditto ~/
         cd ~/ditto
         ```
-    
+2. Install Docker Compose
+
+- #### Linux:
+	```bash
+	sudo apt-get update
+	sudo apt-get install docker-compose-plugin
+ 	docker compose version
+	```
+- #### Windows:
+	- TO DO
+
 2. Start Ditto
     - Navigate to the repository and enter these commands in the terminal.
         ```bash
         cd ~/ditto/deployment/docker/
-        docker-compose up -d
+        docker compose up -d
         ```
     
 3. Open URL

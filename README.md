@@ -166,12 +166,12 @@ auth = ("ditto" , "ditto")
 This function retrieves the details of a specific "thing" using its thingID. If the thing exists, it returns its details in JSON format. If the thing is not found, it returns None.
 ```python
 def get_thing(thingID):
-	url = thingsURL + thingID
-	response = requests.get(url, auth=auth)
-	if response.status_code == 404:
-    	   return None
-	else:
-    	   return response.json()
+    url = thingsURL + thingID
+    response = requests.get(url, auth=auth)
+    if response.status_code == 404:
+        return None
+    else:
+        return response.json()
 ```
 
 ### Function 2: put_thing(thingID, ThingData)

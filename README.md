@@ -68,16 +68,13 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
 	cd ~/kuksa-databroker
 	docker run --rm -it -p 55555:55555 -v "$(pwd)/OBD.json:/OBD.json" ghcr.io/eclipse-kuksa/kuksa-databroker:main --insecure --vss /OBD.json
 	```
-
-- Here is the output after executing the final command, which starts the Databroker server.
 	![image](https://github.com/user-attachments/assets/ce0ae01e-d119-4b4b-86b6-e13addc58d94)
 
 
 ### Experiment 5: Sending OBD Data to Kuksa Databroker
 
-1. Create File
-    - Make a new file inside the ‘kuksa-ditto’ folder and name it ‘send_obd_data_to_kuksa.py’.
-2. Copy This Code into the File
+1. Download and Open the File
+    - Download the [send_obd_data_to_kuksa.py](https://github.com/zubxxr/sq_6/blob/main/kuksa-ditto/send_obd_data_to_kuksa.py) and place it in the ‘kuksa-ditto’ folder.
     - This is the same file created earlier with a few extra changes. The changes include:
         ```
         Lines 4 and 5 include new imports.
@@ -85,17 +82,20 @@ Module 3 covers integrating simulated OBD data with the Kuksa Vehicle Abstractio
         Line 11 creates a connection to the Kuksa Databroker.
         Lines 23 to 28 involve sending the generated OBD data to the Databroker.
         ```
-3. Complete the Code
 
-4. Create a Virtual Environment
-    - Create the virtual environment in the same directory as the created files. Follow these steps to create and activate it:
+2. Complete the Code
+   - There are comments in the code to guide you.
+
+3. Create a Virtual Environment
+    - Create a virtual environment `(Command is for Linux)` in the same directory as the created files. 
         ```
-        sudo apt install python3-venv
+        cd ~/kuksa-databroker/kuksa-ditto
         python3 -m venv venv
         source venv/bin/activate
         pip install kuksa-client
         ```
-5. Execute The File
+
+4. Execute The File
     - Finally, execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Just make sure that the Kuksa Databroker is also running in another terminal. Here is an example of its output:
 
 ### Experiment 6: Receiving OBD Data from Kuksa Databroker

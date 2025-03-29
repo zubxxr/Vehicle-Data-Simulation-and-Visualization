@@ -21,7 +21,7 @@ This module explores Software Defined Vehicles (SDVs), focusing on real-time veh
    mkdir kuksa-ditto
    ```
     
-5. Download the VSS_Ditto and Policy Files and place them inside the ‘kuksa-ditto’ folder. 
+5. Download the `VSS_Ditto` and `Policy` Files` and place them inside the ‘kuksa-ditto’ folder. 
     - [policy.json](https://github.com/zubxxr/sq_6/blob/main/policy.json)
     - [VSS_Ditto.json](https://github.com/zubxxr/sq_6/blob/main/VSS_Ditto.json)
       

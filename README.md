@@ -282,7 +282,7 @@ def put_feature_value(thingID, feature, value):
         ```
 
 5. Print The Response
-    - For each function call, the response variable will store the result of the put_feature_value function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
+    - For each function call in step 4, the response variable will store the result of the put_feature_value function. Under each respective print statement, print the response to see the outcome of the function call for each feature.
       
 6. Copy The Following Code
     - Copy this code and paste it after the main function but above the ‘asyncio.run(main())’ line.

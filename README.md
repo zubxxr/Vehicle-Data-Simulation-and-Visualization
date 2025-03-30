@@ -138,17 +138,17 @@ Eclipse Ditto is an IoT backend solution that uses digital twins to create cloud
 - #### Windows:
 	- TO DO
 
-2. Start Ditto
+3. Start Ditto
     - Navigate to the repository and enter these commands in the terminal.
         ```bash
         cd ~/ditto/deployment/docker/
         docker compose up -d
         ```
     
-3. Open URL
+4. Open URL
     - Open this url in your browser: http://localhost:8080
       
-4. Open the User Interface
+5. Open the User Interface
     - Click the first bullet point `visit the Eclipse Ditto™ explorer UI to get started with your first digital twins`.
 
 ## 4. Integration of Kuksa with Ditto

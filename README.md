@@ -91,10 +91,11 @@ This section covers integrating simulated OBD data with the Kuksa Vehicle Abstra
         pip install kuksa-client
         ```
 4. Install the packages inside the Virtual Environment
-        ```bash
-        pip install kuksa-client
+     - Run the following commands:
+	```bash
+	pip install kuksa-client
 	pip install requests
-        ```
+	```
    
 6. Execute The File
     - Execute the code file in the activated virtual environment. It will immediately start outputting random values each second. Launch the Databroker first, then the script.

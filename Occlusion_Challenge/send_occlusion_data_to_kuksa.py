@@ -12,11 +12,6 @@ def read_csv(file_path):
     df = pd.read_csv(file_path)
     return df
 
-# GitHub URL construction for each image
-def get_github_image_url(image_filename):
-    base_url = "https://raw.githubusercontent.com/GeorgeDaoud3/SOFE4630U-Design/main/Dataset_Occluded_Pedestrian/"
-    return base_url + image_filename
-
 # Ensure that all numeric values are treated as floats
 def ensure_float(value):
     try:
@@ -27,25 +22,13 @@ def ensure_float(value):
 # Asynchronous main function to connect to KUKSA Databroker and send data from CSV
 async def main():
     # Load CSV data
-    csv_data = read_csv('Labels.csv')  # Update this path if needed
+    csv_data = read_csv('Labels.csv')
     
-    # Image folder where the images are stored (you can still keep this if needed for local testing)
-    image_folder = '../Images'  # Update this to your image folder path
-
     # Establish an asynchronous connection to the KUKSA Databroker at the IP: 127.0.0.1 and port 55555
     async with VSSClient('127.0.0.1', 55555) as client:
         # Iterate through each row in the CSV
         for index, row in csv_data.iterrows():
-            # Prepare the vehicle data to send to KUKSA
-            occluded_image_filename = row['Occluded_Image_View']
-            occluding_car_filename = row['Occluding_Car_View']
-            ground_truth_filename = row['Ground_Truth_View']
-            
-            # Construct the GitHub URLs for the images
-            occluded_image_url = get_github_image_url(occluded_image_filename)
-            occluding_car_url = get_github_image_url(occluding_car_filename)
-            ground_truth_url = get_github_image_url(ground_truth_filename)
-            
+
             # Extract the vehicle coordinates and pedestrian data from the CSV
             car1_x = ensure_float(row['Car1_Location_X'])
             car1_y = ensure_float(row['Car1_Location_Y'])
@@ -70,9 +53,6 @@ async def main():
             
             # Prepare the vehicle data to send to KUKSA
             vehicle_data = {
-                'Vehicle.Images.OccludedImage': Datapoint(occluded_image_url),
-                'Vehicle.Images.OccludingCar': Datapoint(occluding_car_url),
-                'Vehicle.Images.GroundTruthView': Datapoint(ground_truth_url),
                 'Vehicle.Coordinates.Car1_Location.X': Datapoint(car1_x),
                 'Vehicle.Coordinates.Car1_Location.Y': Datapoint(car1_y),
                 'Vehicle.Coordinates.Car2_Location.X': Datapoint(car2_x),
@@ -93,9 +73,6 @@ async def main():
         
             # Print the values for debugging
             print(f"Sending data for vehicle {index + 1}:")
-            print(f"Occluded Image (URL) = {occluded_image_url}")
-            print(f"Occluding Car (URL) = {occluding_car_url}")
-            print(f"Ground Truth View (URL) = {ground_truth_url}")
             print(f"Car1 Location = ({car1_x}, {car1_y})")
             print(f"Car2 Location = ({car2_x}, {car2_y})")
             print(f"Pedestrian Location  = ({pedestrian_x}, {pedestrian_y})")
@@ -106,7 +83,7 @@ async def main():
             print('-----------------------------')
 
             # Wait before sending the next data (adjust this based on your needs)
-            time.sleep(1)  # For second-by-second messaging (you can adjust this)
+            time.sleep(0.5)
 
 # Run the asynchronous main function
 asyncio.run(main())

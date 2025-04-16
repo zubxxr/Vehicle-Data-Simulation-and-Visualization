@@ -33,6 +33,7 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
       ![image](https://github.com/user-attachments/assets/7891203e-e545-46cc-a353-c2ed6ed17922)
 
 ## Challenge
+
 ### Steps:
 
 1. **Data Retrieval**:
@@ -64,7 +65,7 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
 
 ### Submission Requirements:
 - **Script** to retrieve data from **Ditto**.
-- **Matplotlib or Plotly** visualization of car and pedestrian positions, with dynamic updates if applicable.
+- **Visualization** of car and pedestrian positions. Students are free to use any visualization tool or library they prefer, such as **Matplotlib**, **Plotly**, **Pygame**, or even other interactive tools. The key is to dynamically display the data with proper scaling and labels.
 - (Optional) **Safety analysis** and color-coded alerts indicating danger zones.
 - (Optional) **Code for optimizing placement** or making adjustments based on safety rules.
 

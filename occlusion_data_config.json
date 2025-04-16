@@ -113,34 +113,6 @@
         "type": "branch",
         "uuid": "coordinates_uuid"
       },
-      "Images": {
-        "children": {
-          "OccludedImage": {
-            "datatype": "string",
-            "description": "Image showing occluded view of the vehicle",
-            "type": "sensor",
-            "unit": "filename",
-            "uuid": "occluded_image_uuid"
-          },
-          "OccludingCar": {
-            "datatype": "string",
-            "description": "Image showing the occluding car",
-            "type": "sensor",
-            "unit": "filename",
-            "uuid": "occluding_car_uuid"
-          },
-          "GroundTruthView": {
-            "datatype": "string",
-            "description": "Ground truth image view of the vehicle",
-            "type": "sensor",
-            "unit": "filename",
-            "uuid": "ground_truth_view_uuid"
-          }
-        },
-        "description": "Vehicle image data, including views for occluded image, occluding car, and ground truth.",
-        "type": "branch",
-        "uuid": "images_uuid"
-      },
       "Timestamp": {
         "datatype": "string",
         "description": "Timestamp for the data",
@@ -148,7 +120,7 @@
         "uuid": "timestamp_uuid"
       }
     },
-    "description": "High-level vehicle data including image views and coordinates.",
+    "description": "High-level vehicle data.",
     "type": "branch",
     "uuid": "vehicle_data_uuid"
   }

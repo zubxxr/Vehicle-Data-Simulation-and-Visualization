@@ -1,4 +1,4 @@
-# Vehicle Data Simulation and Setup Instructions
+# Vehicle Data Simulation and Digital Twin Integration
 
 This module will teach you the following: how to simulate on-board diagnostics (OBD) to generate real-time vehicle data, how to integrate this data with the Kuksa Vehicle Abstraction Layer (VAL), and how to send it to the Eclipse Ditto IoT platform to create a digital twin. You will learn to generate random OBD data using Python, transmit and retrieve it through Kuksa, and configure Ditto to facilitate seamless data exchange between physical devices and external systems. Additionally, you will experiment with launching Eclipse Ditto, setting up its user interface, and configuring URLs and authentication variables to enable real-time vehicle data simulation.
 

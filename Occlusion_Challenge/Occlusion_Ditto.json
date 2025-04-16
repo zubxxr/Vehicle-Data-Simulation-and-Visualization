@@ -1,0 +1,79 @@
+{
+    "policyId": "org.otu:occlusion-policy",
+    "features": {
+        "OccludedImage": {
+            "properties": {
+                "value": "image_filename_1"
+            }
+        },
+        "OccludingCar": {
+            "properties": {
+                "value": "image_filename_2"
+            }
+        },
+        "GroundTruthView": {
+            "properties": {
+                "value": "image_filename_3"
+            }
+        },
+        "Car1_Location": {
+            "properties": {
+                "value": {
+                    "X": 12.4,
+                    "Y": 15.7
+                }
+            }
+        },
+        "Car2_Location": {
+            "properties": {
+                "value": {
+                    "X": 20.4,
+                    "Y": 22.3
+                }
+            }
+        },
+        "Pedestrian_Location": {
+            "properties": {
+                "value": {
+                    "X": 5.5,
+                    "Y": 6.7
+                }
+            }
+        },
+        "Car1_Length": {
+            "properties": {
+                "value": 4.5
+            }
+        },
+        "Car1_Width": {
+            "properties": {
+                "value": 2.0
+            }
+        },
+        "Car2_Length": {
+            "properties": {
+                "value": 4.7
+            }
+        },
+        "Car2_Width": {
+            "properties": {
+                "value": 2.2
+            }
+        },
+        "Pedestrian_Length": {
+            "properties": {
+                "value": 1.2
+            }
+        },
+        "Pedestrian_Width": {
+            "properties": {
+                "value": 0.5
+            }
+        },
+        "Timestamp": {
+            "properties": {
+                "value": "2025-04-14T10:00:00Z"
+            }
+        }
+    }
+}

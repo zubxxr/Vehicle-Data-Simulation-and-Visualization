@@ -77,18 +77,15 @@ def put_feature_value(thingID, feature, value):
     response = requests.put(url, json=data, headers=headers, auth=auth)
     return response
 
-# Function to construct the raw GitHub URL for each image
-def get_github_image_url(image_filename):
-    return image_filename
-
-
 # Asynchronous main function to connect to KUKSA Databroker and send data from CSV
 async def main():
+
+    last_timestamp = None
+
     async with VSSClient('127.0.0.1', 55555) as client:
         while True:
-            # Get image data and coordinates from KUKSA
+            # Get data from KUKSA
             values = await client.get_current_values([
-                'Vehicle.Images.OccludedImage', 'Vehicle.Images.OccludingCar', 'Vehicle.Images.GroundTruthView',
                 'Vehicle.Coordinates.Car1_Location.X', 'Vehicle.Coordinates.Car1_Location.Y',
                 'Vehicle.Coordinates.Car2_Location.X', 'Vehicle.Coordinates.Car2_Location.Y',
                 'Vehicle.Coordinates.Pedestrian_Location.X', 'Vehicle.Coordinates.Pedestrian_Location.Y',
@@ -97,11 +94,6 @@ async def main():
                 'Vehicle.Coordinates.Car2_Length', 'Vehicle.Coordinates.Car2_Width',
                 'Vehicle.Coordinates.Pedestrian_Length', 'Vehicle.Coordinates.Pedestrian_Width'
             ])
-
-            # Fetch the image filenames from KUKSA
-            OccludedImage = values['Vehicle.Images.OccludedImage'].value
-            OccludingCar = values['Vehicle.Images.OccludingCar'].value
-            GroundTruthView = values['Vehicle.Images.GroundTruthView'].value
 
             # Fetch the car and pedestrian coordinates from KUKSA
             car1_x = values['Vehicle.Coordinates.Car1_Location.X'].value
@@ -125,23 +117,11 @@ async def main():
 
             timestamp = values['Vehicle.Timestamp'].value
 
-            # Construct the GitHub URLs for the images
-            occluded_image_url = get_github_image_url(OccludedImage)
-            occluding_car_url = get_github_image_url(OccludingCar)
-            ground_truth_url = get_github_image_url(GroundTruthView)
+            if last_timestamp == timestamp:
+                print("No new data, stopping.")
+                break
 
-            # Send the image URLs to Ditto
-            print('occluded_image_url =', occluded_image_url)
-            response = send_image_url_to_ditto('org.otu:occlusion-data', 'OccludedImage', occluded_image_url)
-            print(response)
-
-            print('occluding_car_url =', occluding_car_url)
-            response = send_image_url_to_ditto('org.otu:occlusion-data', 'OccludingCar', occluding_car_url)
-            print(response)
-
-            print('ground_truth_url =', ground_truth_url)
-            response = send_image_url_to_ditto('org.otu:occlusion-data', 'GroundTruthView', ground_truth_url)
-            print(response)
+            last_timestamp = timestamp
 
             # Send the car coordinates to Ditto as objects
             car1_location = {'X': car1_x, 'Y': car1_y}
@@ -187,15 +167,6 @@ async def main():
             time.sleep(1)
             print('-----------------------------')
 
-# Function to send the image URL to Ditto
-def send_image_url_to_ditto(thingID, feature, image_url):
-    url = thingsURL + thingID + "/features/" + feature + "/properties"
-    headers = {"Content-Type": "Application/json"}
-    data = {
-        "value": image_url
-    }
-    response = requests.put(url, json=data, headers=headers, auth=auth)
-    return response
 
 # Function to send feature value to Ditto
 def send_feature_to_ditto(thingID, feature, value):
@@ -223,13 +194,3 @@ def send_feature_to_ditto(thingID, feature, value):
 # print(response)
 
 asyncio.run(main())
-
-# response = delete_policy("org.otu:occlusion-policy")
-# print(response)
-# response = delete_thing("org.otu:occlusion-data")
-# print(response)
-
-
-
-
-

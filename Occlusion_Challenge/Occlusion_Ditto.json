@@ -1,21 +1,6 @@
 {
     "policyId": "org.otu:occlusion-policy",
     "features": {
-        "OccludedImage": {
-            "properties": {
-                "value": "image_filename_1"
-            }
-        },
-        "OccludingCar": {
-            "properties": {
-                "value": "image_filename_2"
-            }
-        },
-        "GroundTruthView": {
-            "properties": {
-                "value": "image_filename_3"
-            }
-        },
         "Car1_Location": {
             "properties": {
                 "value": {

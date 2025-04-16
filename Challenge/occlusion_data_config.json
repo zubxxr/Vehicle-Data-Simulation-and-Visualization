@@ -1,0 +1,155 @@
+{
+  "Vehicle": {
+    "children": {
+      "Coordinates": {
+        "children": {
+          "Car1_Location": {
+            "children": {
+              "X": {
+                "datatype": "float",
+                "description": "X coordinate of Car 1",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "car1_x_uuid"
+              },
+              "Y": {
+                "datatype": "float",
+                "description": "Y coordinate of Car 1",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "car1_y_uuid"
+              }
+            },
+            "description": "Location of Car 1 in 3D space",
+            "type": "branch",
+            "uuid": "car1_location_uuid"
+          },
+          "Car2_Location": {
+            "children": {
+              "X": {
+                "datatype": "float",
+                "description": "X coordinate of Car 2",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "car2_x_uuid"
+              },
+              "Y": {
+                "datatype": "float",
+                "description": "Y coordinate of Car 2",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "car2_y_uuid"
+              }
+            },
+            "description": "Location of Car 2 in 3D space",
+            "type": "branch",
+            "uuid": "car2_location_uuid"
+          },
+          "Pedestrian_Location": {
+            "children": {
+              "X": {
+                "datatype": "float",
+                "description": "X coordinate of the pedestrian",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "pedestrian_x_uuid"
+              },
+              "Y": {
+                "datatype": "float",
+                "description": "Y coordinate of the pedestrian",
+                "type": "sensor",
+                "unit": "meters",
+                "uuid": "pedestrian_y_uuid"
+              }
+            },
+            "description": "Location of the pedestrian",
+            "type": "branch",
+            "uuid": "pedestrian_location_uuid"
+          },
+          "Car1_Length": {
+            "datatype": "float",
+            "description": "Length of Car 1",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "car1_length_uuid"
+          },
+          "Car1_Width": {
+            "datatype": "float",
+            "description": "Width of Car 1",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "car1_width_uuid"
+          },
+          "Car2_Length": {
+            "datatype": "float",
+            "description": "Length of Car 2",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "car2_length_uuid"
+          },
+          "Car2_Width": {
+            "datatype": "float",
+            "description": "Width of Car 2",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "car2_width_uuid"
+          },
+          "Pedestrian_Length": {
+            "datatype": "float",
+            "description": "Length of the pedestrian",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "pedestrian_length_uuid"
+          },
+          "Pedestrian_Width": {
+            "datatype": "float",
+            "description": "Width of the pedestrian",
+            "type": "sensor",
+            "unit": "meters",
+            "uuid": "pedestrian_width_uuid"
+          }
+        },
+        "description": "Coordinates for cars and pedestrian",
+        "type": "branch",
+        "uuid": "coordinates_uuid"
+      },
+      "Images": {
+        "children": {
+          "OccludedImage": {
+            "datatype": "string",
+            "description": "Image showing occluded view of the vehicle",
+            "type": "sensor",
+            "unit": "filename",
+            "uuid": "occluded_image_uuid"
+          },
+          "OccludingCar": {
+            "datatype": "string",
+            "description": "Image showing the occluding car",
+            "type": "sensor",
+            "unit": "filename",
+            "uuid": "occluding_car_uuid"
+          },
+          "GroundTruthView": {
+            "datatype": "string",
+            "description": "Ground truth image view of the vehicle",
+            "type": "sensor",
+            "unit": "filename",
+            "uuid": "ground_truth_view_uuid"
+          }
+        },
+        "description": "Vehicle image data, including views for occluded image, occluding car, and ground truth.",
+        "type": "branch",
+        "uuid": "images_uuid"
+      },
+      "Timestamp": {
+        "datatype": "string",
+        "description": "Timestamp for the data",
+        "type": "sensor",
+        "uuid": "timestamp_uuid"
+      }
+    },
+    "description": "High-level vehicle data including image views and coordinates.",
+    "type": "branch",
+    "uuid": "vehicle_data_uuid"
+  }
+}

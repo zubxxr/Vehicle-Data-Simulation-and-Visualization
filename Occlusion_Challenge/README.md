@@ -26,11 +26,12 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
      source ../kuksa-ditto/venv/bin/activate
      python3 send_data_to_ditto.py
      ```
-     ![image](https://github.com/user-attachments/assets/142801e5-a8d0-4d7f-97f8-b61c277c34ba)
+     ![image](https://github.com/user-attachments/assets/c40f57cc-d069-4da9-8a2b-9a8f99b970a0)
 
  4. **Open Ditto**
     - In Ditto, you will see the values being updated in real-time.
-      ![image](https://github.com/user-attachments/assets/7891203e-e545-46cc-a353-c2ed6ed17922)
+      ![image](https://github.com/user-attachments/assets/7568e53f-642d-4b65-9ca5-2433c680b12f)
+
 
 ## Challenge
 

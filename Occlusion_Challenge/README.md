@@ -3,6 +3,16 @@
 ## Objective
 The goal of this challenge is to visualize the positions of vehicles and pedestrians in a 2D bird's eye view format, based on real-time data extracted from Ditto. You will be tasked with representing car locations, pedestrian positions, and their dimensions (length, width) on a simple 2D plot. You will then assess whether these objects are too close to each other, making sure the system accounts for safety and spatial relationships.
 
+# Table of Contents
+
+  - [Objective](#objective)
+  - [Setup](#setup)
+  - [Challenge](#challenge)
+  - [Submission Requirements](#submission-requirements)
+  - [Evaluation Criteria](#evaluation-criteria)
+  - [Challenges You Will Learn](#challenges-you-will-learn)
+
+
 ## Setup
 1. **Start the Kuksa Databroker with the Occlusion Config File**
    - Open a terminal and run the code.

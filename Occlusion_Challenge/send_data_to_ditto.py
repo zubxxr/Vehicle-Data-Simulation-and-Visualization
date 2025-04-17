@@ -164,7 +164,7 @@ async def main():
             response = send_feature_to_ditto('org.otu:occlusion-data', 'Timestamp', timestamp)
             print(response)
 
-            time.sleep(1)
+            time.sleep(3.5)
             print('-----------------------------')
 
 
@@ -194,3 +194,8 @@ def send_feature_to_ditto(thingID, feature, value):
 # print(response)
 
 asyncio.run(main())
+
+# response = delete_policy("org.otu:occlusion-policy")
+# print(response)
+# response = delete_thing("org.otu:occlusion-data")
+# print(response)

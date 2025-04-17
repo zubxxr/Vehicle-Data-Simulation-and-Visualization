@@ -56,7 +56,6 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
    - Once the data is retrieved, you will **visualize** it on a **2D plot** using **Matplotlib**, **Plotly**, or any other visualization tool or library you prefer.
    - Each **vehicle** (Car 1, Car 2) will be represented as a **rectangle**, sized based on the **vehicle's length and width**.
    - The **pedestrian** will be represented as a **rectangle** or **circle**, sized based on the **pedestrian's length and width**.
-   - The plot should include a `next` button, which will go to the next record in the database.
    - **Axis labels**: Add **"X Coordinate"** and **"Y Coordinate"** labels, and a **title** for the plot.
 
 3. **Danger Zone Calculation**:
@@ -64,20 +63,27 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
    - **Determine whether a pedestrian is inside the danger zone**. If the pedestrian is within this range, the vehicle should take action (e.g., stop or alert).
    - The danger zone for each vehicle should be visualized, with a **color-coded** representation (e.g., red for danger zone and green for safe zone).
 
-4. **Vehicle Behavior Simulation**:
-   - **Green Vehicle**: This vehicle should continue driving if no pedestrian is detected within the danger zone.
-   - **Red Vehicle**: This vehicle should **stop immediately** when a pedestrian is detected within its danger zone.
-   - **Green Vehicle Communication with Red Vehicle**: If the green vehicle detects a pedestrian in its danger zone, it should **communicate** with the red vehicle to signal it to stop as well. This can be simulated by changing the red vehicle's state to stopped when the green vehicle detects the pedestrian.
+4. **Vehicle Behavior Simulation and Output System**:
+   - **Green Vehicle**: This vehicle should continue **driving** if no pedestrian is detected within its danger zone. Simulate this by printing **"Green vehicle: driving..."** in the console, repeating every second or so, until a pedestrian is detected.
+   - **Red Vehicle**: This vehicle should stop immediately when a pedestrian is detected within its danger zone. Simulate this by printing **"Red vehicle: danger detected, stopping."** when the pedestrian enters its danger zone.
+   - **Green Vehicle Communication with Red Vehicle**: If the green vehicle detects a pedestrian in its danger zone, it should communicate with the red vehicle to signal it to stop as well. Simulate this by printing **"Green vehicle: stop"** in the console. The red vehicle will print **"Red vehicle: stop"** in response, simulating communication between the vehicles.
 
-5. **Output and Alert System**:
-   - Display or print the **status** of the vehicles based on the detection of pedestrians and danger zones. For example:
-     - **Green vehicle**: "No pedestrian detected, continuing driving."
-     - **Red vehicle**: "Pedestrian detected, stopping."
-     - **Green vehicle communication**: "Green vehicle detects pedestrian, red vehicle stops."
-   - Output this status to the console or display in the visualization for clarity.
+   The vehicles' movement is not represented on the plot. The primary focus is on **simulating the decision-making** and **communication** between the vehicles based on the pedestrian's proximity, with the status displayed in the **console output**. The behavior is updated dynamically as new data is retrieved.
+
+   ### Example console output:
+   - **Green vehicle**: "Driving..." (repeated every 1-2 seconds as it continues driving).
+   - **Red vehicle**: "Driving..." (repeated until a pedestrian is detected).
+   - When a pedestrian enters the danger zone:
+     - **Red vehicle**: "Danger detected, stopping."
+     - **Green vehicle**: "Stop."
+
+5. **Visualization**:
+   - The 2D plot should visualize the **vehicle** and **pedestrian** locations and their corresponding sizes.
+   - The primary vehicle behavior and interactions are **displayed in the console logs**. The plot should remain focused on visualizing the current data (e.g., locations and dimensions of vehicles and pedestrians), without showing vehicle interaction messages.
+   - The status of the vehicles (e.g., "driving", "danger detected", "stop") should be printed in the console to reflect their current behavior in response to pedestrian detection.
 
 6. **Dynamic Updates**:
-   - Implement a **button** (or similar mechanism) to **retrieve new data** and update the plot automatically. This will simulate **real-time updates** of the vehicle and pedestrian movements, with the status and danger zones being updated.
+   - Implement a **button** (or similar mechanism) to **retrieve new data** and update the plot automatically. This will simulate **real-time updates** of the vehicle and pedestrian movements. The plot should show **vehicle and pedestrian positions** along with their **dimensions**, and the danger zone visualization should update accordingly as new data is retrieved.
 ---
 
 ### Submission Requirements:
@@ -96,27 +102,18 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
    - The **dynamic updating** of vehicle positions and danger zones.
    - **Labels**, **titles**, and **legend** inclusion for clarity.
 
-3. **Danger Zone Calculation**:
+2. **Danger Zone Calculation**:
    - The correctness of the **danger zone calculation** and its **visualization**.
    - Clear representation of the **danger zone** for each vehicle.
 
-4. **Vehicle Logic**:
+3. **Vehicle Logic**:
    - The accuracy of the **vehicle behavior simulation**:
      - Green vehicle continues driving when no pedestrian is nearby.
      - Red vehicle stops when a pedestrian is detected in its danger zone.
      - Green vehicle communicates with the red vehicle to stop when needed.
 
-5. **Interactivity** (Bonus):
-   - How well the plot **updates dynamically** with new data.
-   - The user interface's responsiveness and intuitiveness (e.g., button or automated updates).
-
-6. **Code Quality**:
+4. **Code Quality**:
    - The clarity and **organization** of the code. Proper **modularization** and clean coding practices.
-
-7. **Creativity** (Bonus):
-   - Additional features such as **alerts**, **animations**, or **improving the user interface**.
-   - Any **extra logic** to handle more complex scenarios (e.g., multiple pedestrians, multiple vehicles).
-
 ---
 
 ### Challenges You Will Learn:

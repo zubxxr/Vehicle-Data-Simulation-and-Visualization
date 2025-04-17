@@ -399,4 +399,4 @@ def put_feature_value(thingID, feature, value):
       ![image](https://github.com/user-attachments/assets/45aa70d0-453c-421b-b55b-b00885a4ebd2)
 
 ## Challenge
-Navigate to the [Occlusion Challenge: Visualizing and Evaluating Vehicle-Pedestrian Data](https://github.com/zubxxr/Vehicle-Data-Simulation-and-Visualization/tree/main/Occlusion_Challenge) to work on the challenge.
+Navigate to the [Occlusion Challenge: Visualizing and Evaluating Vehicle-Pedestrian Data](https://github.com/zubxxr/Vehicle-Data-Simulation-and-Visualization/tree/main/Occlusion_Challenge) page to work on the challenge.

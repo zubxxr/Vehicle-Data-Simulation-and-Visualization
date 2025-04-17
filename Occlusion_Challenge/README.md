@@ -54,9 +54,12 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
 
 2. **Bird's Eye View Visualization**:
    - Once the data is retrieved, you will **visualize** it on a **2D plot** using **Matplotlib**, **Plotly**, or any other visualization tool or library you prefer.
-   - Each **vehicle** (Car 1, Car 2) will be represented as a **rectangle**, sized based on the **vehicle's length and width**.
-   - The **pedestrian** will be represented as a **rectangle** or **circle**, sized based on the **pedestrian's length and width**.
+   - Each **vehicle** (Car 1, Car 2) will be represented as a **rectangle**, sized based on the **vehicle's length and width**. Make Car 1 the color red, and Car 2 the color green.
+   - The **pedestrian** will be represented as a **rectangle** or **circle**, sized based on the **pedestrian's length and width**. Make it the color blue.
    - **Axis labels**: Add **"X Coordinate"** and **"Y Coordinate"** labels, and a **title** for the plot.
+
+Here is an example of what the plot should look like once the data is visualized. 
+![image](https://github.com/user-attachments/assets/aebdf6b9-5805-4068-85ad-9bcb0db15a5d)
 
 3. **Danger Zone Calculation**:
    - Calculate the **danger zone** around each vehicle based on a **threshold distance** (e.g., 1.5 times the vehicle's width).

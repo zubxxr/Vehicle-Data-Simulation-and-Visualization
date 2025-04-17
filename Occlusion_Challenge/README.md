@@ -5,7 +5,6 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
 
 ## Table of Contents
 
-  - [Objective](#objective)
   - [Setup](#setup)
   - [Challenge](#challenge)
   - [Submission Requirements](#submission-requirements)

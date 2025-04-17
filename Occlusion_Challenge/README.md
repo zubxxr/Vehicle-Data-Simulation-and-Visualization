@@ -78,10 +78,6 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
 
 6. **Dynamic Updates**:
    - Implement a **button** (or similar mechanism) to **retrieve new data** and update the plot automatically. This will simulate **real-time updates** of the vehicle and pedestrian movements, with the status and danger zones being updated.
-
-7. **(Optional) Vehicle and Pedestrian Optimization**:
-   - After implementing the danger zone detection, you can **optimize placement** by adjusting vehicle or pedestrian positions for **maximum safety** (e.g., moving vehicles further apart, or changing pedestrian placement to avoid collisions).
-
 ---
 
 ### Submission Requirements:
@@ -90,16 +86,12 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
 - **Danger Zone Detection**: Include the calculation of the danger zone around vehicles and a color-coded system indicating danger (e.g., red for danger zone).
 - **Vehicle Behavior Simulation**: Include the logic for how the **green vehicle** and **red vehicle** respond to pedestrian proximity.
 - **Outputs**: Print the vehicle statuses (e.g., "Green vehicle detected no danger and continues driving").
-- **(Optional)**: Optimize placement to prevent collisions or safety breaches.
 
 ---
 
 ### Evaluation Criteria:
 
-1. **Data Handling**:
-   - How effectively the student retrieves and processes data from the **CSV file**.
-   
-2. **Visualization**:
+1. **Visualization**:
    - **Clarity** and **accuracy** of the 2D plot, including proper scaling of vehicles and pedestrians.
    - The **dynamic updating** of vehicle positions and danger zones.
    - **Labels**, **titles**, and **legend** inclusion for clarity.

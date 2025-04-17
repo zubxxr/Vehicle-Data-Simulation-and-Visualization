@@ -9,7 +9,7 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
   - [Challenge](#challenge)
   - [Submission Requirements](#submission-requirements)
   - [Evaluation Criteria](#evaluation-criteria)
-  - [Challenges You Will Learn](#challenges-you-will-learn)
+  - [Key Learning Outcomes](#key-learning-outcomes)
 
 
 ## Setup
@@ -135,7 +135,7 @@ Here is an example of what the plot should look like once the data is visualized
    - The clarity and **organization** of the code. Proper **modularization** and clean coding practices.
 ---
 
-### Challenges You Will Learn:
+### Key Learning Outcomes:
 - **Data extraction** from a **CSV file**.
 - **Real-time data visualization** with tools like **Matplotlib** or **Plotly**.
 - **Spatial reasoning** and **safety analysis**.

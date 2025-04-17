@@ -83,6 +83,10 @@ This section covers integrating simulated OBD data with the Kuksa Vehicle Abstra
 
 ### Task 2: Powering up Kuksa.VAL 
 
+1. Install Docker
+   - For Linux: https://docs.docker.com/engine/install/
+   - For Windows: https://docs.docker.com/desktop/setup/install/windows-install/
+
 1. Launch the Kuksa Databroker in a Docker Container
 	```bash
 	cd ~/kuksa-databroker

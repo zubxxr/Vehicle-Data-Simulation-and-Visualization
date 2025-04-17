@@ -18,21 +18,28 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
      source ../kuksa-ditto/venv/bin/activate
      python3 send_occlusion_data_to_kuksa.py
      ```
-
-3. **Retreive Data from the Kuksa and Send it to Ditto**
-   - Open a new terminal and run the code.
+     
+3. **Create Thing and Policy**
+   - Open the `send_data_to_ditto.py` file.
+   - Open a new terminal and run the Step 1 and Step 2 code as specifed before. Make sure to comment the main function call.
      ```bash 
      cd ~/kuksa-databroker/Occlusion_Challenge
      source ../kuksa-ditto/venv/bin/activate
      python3 send_data_to_ditto.py
      ```
+     
+4. **Retreive Data from the Kuksa and Send it to Ditto**
+   - Run the same file from step 3 with the Step 1 and Step 2 code commented, and the main function uncommented.
+     ```bash 
+     python3 send_data_to_ditto.py
+     ```
      ![image](https://github.com/user-attachments/assets/c40f57cc-d069-4da9-8a2b-9a8f99b970a0)
 
-4. **Open Ditto**
+5. **Open Ditto**
     - In Ditto, you will see the values being updated in real-time.
       ![image](https://github.com/user-attachments/assets/7568e53f-642d-4b65-9ca5-2433c680b12f)
 
-5. **Retreive the data from Ditto and save it to a local CSV file**
+6. **Retreive the data from Ditto and save it to a local CSV file**
    - Open a new terminal and run the code.
      ```bash 
      cd ~/kuksa-databroker/Occlusion_Challenge

@@ -98,4 +98,4 @@ while True:
     last_timestamp = retrieve_and_save_data(last_timestamp)
     if last_timestamp is None:
         break  # Exit the loop when no new data is found
-    time.sleep(1)  # Fetch data every second
+    time.sleep(3.5)  # Fetch data every second

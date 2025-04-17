@@ -40,60 +40,96 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
      python3 store_ditto_data_into_database.py
      ```   
 
-
 ## Challenge
 
 ### Steps:
 
 1. **Data Retrieval**:
-   - Write a script to **retrieve real-time data** from **Ditto** using the provided Python script.
-   - The data includes:
+   - Write a script to **retrieve real-time data** from the **new CSV file** (acting as a database). The data includes:
+     - **Timestamps**
      - **Car 1 and Car 2 locations (X, Y)**
      - **Pedestrian location (X, Y)**
      - **Car dimensions (Length, Width)**
      - **Pedestrian dimensions (Length, Width)**
-     - **Image URLs (OccludedImage, OccludingCar, GroundTruthView)**
 
 2. **Bird's Eye View Visualization**:
-   - Once the data is retrieved, you will **visualize** it on a **2D plot** using **Matplotlib** or **Plotly**.
+   - Once the data is retrieved, you will **visualize** it on a **2D plot** using **Matplotlib**, **Plotly**, or any other visualization tool or library you prefer.
    - Each **vehicle** (Car 1, Car 2) will be represented as a **rectangle**, sized based on the **vehicle's length and width**.
-   - The **pedestrian** will be represented as a **rectangle**, sized based on the **pedestrian's length and width**.
-   - The plot will be updated dynamically with each new data set, simulating vehicle and pedestrian movement.
-   - **Axis labels**: Add **"X Coordinate"** and **"Y Coordinate"** labels, and **title** for the plot.
+   - The **pedestrian** will be represented as a **rectangle** or **circle**, sized based on the **pedestrian's length and width**.
+   - The plot will be updated dynamically with each new data set, simulating different vehicle and pedestrian situations.
+   - **Axis labels**: Add **"X Coordinate"** and **"Y Coordinate"** labels, and a **title** for the plot.
 
-3. **Safety Evaluation (Optional)**:
-   - Once you visualize the data, you can **evaluate the safety** of pedestrian placement. Ensure the pedestrian is not too close to any vehicle by calculating the **distance** between the pedestrian and the vehicles. You can implement a simple check:
-     - If the pedestrian's position is within a certain **threshold distance** (e.g., 1.5 times the vehicle's width), mark the pedestrian as in a **danger zone**.
-   - If necessary, you could write a function to **alert** when a pedestrian is in the danger zone or implement a color-coded system where:
-     - **Green** indicates safe, and
-     - **Red** indicates danger.
+3. **Danger Zone Calculation**:
+   - Calculate the **danger zone** around each vehicle based on a **threshold distance** (e.g., 1.5 times the vehicle's width).
+   - **Determine whether a pedestrian is inside the danger zone**. If the pedestrian is within this range, the vehicle should take action (e.g., stop or alert).
+   - The danger zone for each vehicle should be visualized, with a **color-coded** representation (e.g., red for danger zone and green for safe zone).
 
-4. **Next Steps**:
-   - **Dynamic Updates**: Once you have successfully visualized the data, implement a **button** (or similar mechanism) to retrieve **new data** and update the plot automatically. This will simulate **real-time updates** of the vehicle and pedestrian movements.
-   - **Optimize Placement** (Optional): Based on the vehicle and pedestrian placements, try to **rearrange** the vehicles or pedestrians for **optimal safety** and **distance management**. Adjust positions to ensure that no collisions or safety breaches happen.
+4. **Vehicle Behavior Simulation**:
+   - **Green Vehicle**: This vehicle should continue driving if no pedestrian is detected within the danger zone.
+   - **Red Vehicle**: This vehicle should **stop immediately** when a pedestrian is detected within its danger zone.
+   - **Green Vehicle Communication with Red Vehicle**: If the green vehicle detects a pedestrian in its danger zone, it should **communicate** with the red vehicle to signal it to stop as well. This can be simulated by changing the red vehicle's state to stopped when the green vehicle detects the pedestrian.
+
+5. **Output and Alert System**:
+   - Display or print the **status** of the vehicles based on the detection of pedestrians and danger zones. For example:
+     - **Green vehicle**: "No pedestrian detected, continuing driving."
+     - **Red vehicle**: "Pedestrian detected, stopping."
+     - **Green vehicle communication**: "Green vehicle detects pedestrian, red vehicle stops."
+   - Output this status to the console or display in the visualization for clarity.
+
+6. **Dynamic Updates**:
+   - Implement a **button** (or similar mechanism) to **retrieve new data** and update the plot automatically. This will simulate **real-time updates** of the vehicle and pedestrian movements, with the status and danger zones being updated.
+
+7. **(Optional) Vehicle and Pedestrian Optimization**:
+   - After implementing the danger zone detection, you can **optimize placement** by adjusting vehicle or pedestrian positions for **maximum safety** (e.g., moving vehicles further apart, or changing pedestrian placement to avoid collisions).
+
+---
 
 ### Submission Requirements:
-- **Script** to retrieve data from **Ditto**.
-- **Visualization** of car and pedestrian positions. Students are free to use any visualization tool or library they prefer, such as **Matplotlib**, **Plotly**, **Pygame**, or even other interactive tools. The key is to dynamically display the data with proper scaling and labels.
-- (Optional) **Safety analysis** and color-coded alerts indicating danger zones.
-- (Optional) **Code for optimizing placement** or making adjustments based on safety rules.
+- **Python Script** to retrieve data from the **CSV file** and implement vehicle and pedestrian logic.
+- **Visualization** of car and pedestrian positions with dynamic updates (e.g., using **Matplotlib**, **Plotly**, or another visualization tool).
+- **Danger Zone Detection**: Include the calculation of the danger zone around vehicles and a color-coded system indicating danger (e.g., red for danger zone).
+- **Vehicle Behavior Simulation**: Include the logic for how the **green vehicle** and **red vehicle** respond to pedestrian proximity.
+- **Outputs**: Print the vehicle statuses (e.g., "Green vehicle detected no danger and continues driving").
+- **(Optional)**: Optimize placement to prevent collisions or safety breaches.
+
+---
 
 ### Evaluation Criteria:
+
 1. **Data Handling**:
-   - How well students handle **retrieving** and **processing** the data from **Ditto**.
+   - How effectively the student retrieves and processes data from the **CSV file**.
+   
 2. **Visualization**:
-   - The clarity and **accuracy** of the 2D plot, including proper scaling of vehicle and pedestrian dimensions.
-   - The inclusion of **axis labels**, **title**, and **legend**.
-3. **Safety Evaluation (Optional)**:
-   - The logic used to determine whether a pedestrian is in a **danger zone** and how it is visualized on the plot.
-4. **Interactivity** (Bonus):
-   - How well the plot **updates dynamically** with new data and how intuitive the user interface is.
-5. **Optimization** (Bonus):
-   - How well the vehicles and pedestrians are rearranged to maximize safety or **optimize placement**.
+   - **Clarity** and **accuracy** of the 2D plot, including proper scaling of vehicles and pedestrians.
+   - The **dynamic updating** of vehicle positions and danger zones.
+   - **Labels**, **titles**, and **legend** inclusion for clarity.
+
+3. **Danger Zone Calculation**:
+   - The correctness of the **danger zone calculation** and its **visualization**.
+   - Clear representation of the **danger zone** for each vehicle.
+
+4. **Vehicle Logic**:
+   - The accuracy of the **vehicle behavior simulation**:
+     - Green vehicle continues driving when no pedestrian is nearby.
+     - Red vehicle stops when a pedestrian is detected in its danger zone.
+     - Green vehicle communicates with the red vehicle to stop when needed.
+
+5. **Interactivity** (Bonus):
+   - How well the plot **updates dynamically** with new data.
+   - The user interface's responsiveness and intuitiveness (e.g., button or automated updates).
+
+6. **Code Quality**:
+   - The clarity and **organization** of the code. Proper **modularization** and clean coding practices.
+
+7. **Creativity** (Bonus):
+   - Additional features such as **alerts**, **animations**, or **improving the user interface**.
+   - Any **extra logic** to handle more complex scenarios (e.g., multiple pedestrians, multiple vehicles).
+
+---
 
 ### Challenges You Will Learn:
-- **Data extraction** from a **digital twin** (Ditto).
+- **Data extraction** from a **CSV file**.
 - **Real-time data visualization** with tools like **Matplotlib** or **Plotly**.
 - **Spatial reasoning** and **safety analysis**.
-- Basic principles of **collision avoidance** in a simulated environment.
-- **Optimizing placement** for safety in dynamic simulations.
+- **Vehicle behavior simulation** in response to pedestrian danger zones.
+- Basic principles of **collision avoidance** and **communication between vehicles** in autonomous systems.

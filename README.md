@@ -2,6 +2,29 @@
 
 This module will teach you the following: how to simulate on-board diagnostics (OBD) to generate real-time vehicle data, how to integrate this data with the Kuksa Vehicle Abstraction Layer (VAL), and how to send it to the Eclipse Ditto IoT platform to create a digital twin. You will learn to generate random OBD data using Python, transmit and retrieve it through Kuksa, and configure Ditto to facilitate seamless data exchange between physical devices and external systems. Additionally, you will experiment with launching Eclipse Ditto, setting up its user interface, and configuring URLs and authentication variables to enable real-time vehicle data simulation.
 
+# Table of Contents
+- [Task 0: Setting Up The Workspace](#task-0-setting-up-the-workspace)
+- [1. Simulating On-Board Diagnostics (OBD)](#1-simulating-on-board-diagnostics-obd)
+  - [Task 1: Creating the Python Script](#task-1-creating-the-python-script)
+- [2. Intro to Eclipse Kuksa.VAL and Data Orchestration](#2-intro-to-eclipse-kuksaval-and-data-orchestration)
+  - [Task 2: Powering up Kuksa.VAL](#task-2-powering-up-kuksaval)
+  - [Task 3: Sending OBD Data to Kuksa Databroker](#task-3-sending-obd-data-to-kuksa-databroker)
+  - [Task 4: Receiving OBD Data from Kuksa Databroker](#task-4-receiving-obd-data-from-kuksa-databroker)
+- [3. Eclipse Ditto](#3-eclipse-ditto)
+  - [Task 5: Launching Eclipse Ditto](#task-5-launching-eclipse-ditto)
+- [4. Integration of Kuksa with Ditto](#4-integration-of-kuksa-with-ditto)
+  - [URLs and Authentication Variables](#urls-and-authentication-variables)
+  - [Function 1: get_thing](#function-1-get_thingthingid)
+  - [Function 2: put_thing](#function-2-put_thingthingid-thingdata)
+  - [Function 3: patch_thing](#function-3-patch_thingthingid-thingdata)
+  - [Function 4: delete_thing](#function-4-delete_thingthingid)
+  - [Function 5: put_policy](#function-5-put_policypolicyid-policydata)
+  - [Function 6: delete_policy](#function-6-delete_policypolicyid)
+  - [Function 7: get_feature_value](#function-7-get_feature_valuethingid-feature)
+  - [Function 8: put_feature_value](#function-8-put_feature_valuethingid-feature-value)
+  - [Task 6: Sending OBD Data to Eclipse Ditto](#task-6-sending-obd-data-to-eclipse-ditto)
+- [Challenge](#challenge)
+
 ### Task 0: Setting Up The Workspace
 
 1. **Clone the Kuksa Databroker repository to your home directory**  
@@ -375,3 +398,5 @@ def put_feature_value(thingID, feature, value):
       
       ![image](https://github.com/user-attachments/assets/45aa70d0-453c-421b-b55b-b00885a4ebd2)
 
+## Challenge
+Navigate to the [Occlusion Challenge: Visualizing and Evaluating Vehicle-Pedestrian Data](https://github.com/zubxxr/Vehicle-Data-Simulation-and-Visualization/tree/main/Occlusion_Challenge) to work on the challenge.

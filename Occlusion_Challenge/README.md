@@ -56,7 +56,7 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
    - Once the data is retrieved, you will **visualize** it on a **2D plot** using **Matplotlib**, **Plotly**, or any other visualization tool or library you prefer.
    - Each **vehicle** (Car 1, Car 2) will be represented as a **rectangle**, sized based on the **vehicle's length and width**.
    - The **pedestrian** will be represented as a **rectangle** or **circle**, sized based on the **pedestrian's length and width**.
-   - The plot will be updated dynamically with each new data set, simulating different vehicle and pedestrian situations.
+   - The plot should include a `next` button, which will go to the next record in the database.
    - **Axis labels**: Add **"X Coordinate"** and **"Y Coordinate"** labels, and a **title** for the plot.
 
 3. **Danger Zone Calculation**:

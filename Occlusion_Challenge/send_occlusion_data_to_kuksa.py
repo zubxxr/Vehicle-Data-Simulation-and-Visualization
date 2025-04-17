@@ -72,7 +72,7 @@ async def main():
             values = await client.set_current_values(vehicle_data)
         
             # Print the values for debugging
-            print(f"Sending data for vehicle {index + 1}:")
+            print(f"Sending data for record {index + 1}:")
             print(f"Car1 Location = ({car1_x}, {car1_y})")
             print(f"Car2 Location = ({car2_x}, {car2_y})")
             print(f"Pedestrian Location  = ({pedestrian_x}, {pedestrian_y})")
@@ -83,7 +83,7 @@ async def main():
             print('-----------------------------')
 
             # Wait before sending the next data (adjust this based on your needs)
-            time.sleep(0.5)
+            time.sleep(3)
 
 # Run the asynchronous main function
 asyncio.run(main())

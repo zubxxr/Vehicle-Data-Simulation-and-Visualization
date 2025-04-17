@@ -28,9 +28,17 @@ The goal of this challenge is to visualize the positions of vehicles and pedestr
      ```
      ![image](https://github.com/user-attachments/assets/c40f57cc-d069-4da9-8a2b-9a8f99b970a0)
 
- 4. **Open Ditto**
+4. **Open Ditto**
     - In Ditto, you will see the values being updated in real-time.
       ![image](https://github.com/user-attachments/assets/7568e53f-642d-4b65-9ca5-2433c680b12f)
+
+5. **Retreive the data from Ditto and save it to a local CSV file**
+   - Open a new terminal and run the code.
+     ```bash 
+     cd ~/kuksa-databroker/Occlusion_Challenge
+     source ../kuksa-ditto/venv/bin/activate
+     python3 store_ditto_data_into_database.py
+     ```   
 
 
 ## Challenge

@@ -3,7 +3,7 @@
 This module will teach you the following: how to simulate on-board diagnostics (OBD) to generate real-time vehicle data, how to integrate this data with the Kuksa Vehicle Abstraction Layer (VAL), and how to send it to the Eclipse Ditto IoT platform to create a digital twin. You will learn to generate random OBD data using Python, transmit and retrieve it through Kuksa, and configure Ditto to facilitate seamless data exchange between physical devices and external systems. Additionally, you will experiment with launching Eclipse Ditto, setting up its user interface, and configuring URLs and authentication variables to enable real-time vehicle data simulation.
 
 ## Table of Contents
-- [Task 0: Setting Up The Workspace](#task-0-setting-up-the-workspace)
+- [Setting Up The Workspace](#setting-up-the-workspace)
 - [1. Simulating On-Board Diagnostics (OBD)](#1-simulating-on-board-diagnostics-obd)
   - [Task 1: Creating the Python Script](#task-1-creating-the-python-script)
 - [2. Intro to Eclipse Kuksa.VAL and Data Orchestration](#2-intro-to-eclipse-kuksaval-and-data-orchestration)
@@ -25,7 +25,7 @@ This module will teach you the following: how to simulate on-board diagnostics (
   - [Task 6: Sending OBD Data to Eclipse Ditto](#task-6-sending-obd-data-to-eclipse-ditto)
 - [Challenge](#challenge)
 
-## Task 0: Setting Up The Workspace
+## Setting Up The Workspace
 
 1. **Clone the Kuksa Databroker repository to your home directory**  
    ```bash
